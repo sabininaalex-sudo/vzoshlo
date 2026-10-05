@@ -1,4 +1,9 @@
 /* Взошло! — стили сайта. Темы: светлая по умолчанию, темная по системной настройке или переключателю. */
+/* Шрифты лежат на сайте (лицензия OFL), сторонние серверы не запрашиваются */
+@font-face { font-family: Nunito; font-style: normal; font-weight: 200 1000; font-display: swap; src: url(../fonts/nunito-cyrillic-wght-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: Nunito; font-style: normal; font-weight: 200 1000; font-display: swap; src: url(../fonts/nunito-latin-wght-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: Onest; font-style: normal; font-weight: 100 900; font-display: swap; src: url(../fonts/onest-cyrillic-wght-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: Onest; font-style: normal; font-weight: 100 900; font-display: swap; src: url(../fonts/onest-latin-wght-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 :root {
   --bg: #FBF6EF; --text: #2A1F1B; --head: #2A1F1B; --body: #4F443D; --muted: #6E625A; --faint: #8A7E76;
   --glass: rgba(255,255,255,0.72); --glass-h: rgba(255,255,255,0.95); --line: rgba(42,31,27,0.10); --line2: rgba(42,31,27,0.22);
@@ -275,6 +280,7 @@ input[type="text"], input[type="number"], select { font: 17px/1.2 Onest, sans-se
 .prose { max-width: 760px; display: flex; flex-direction: column; gap: 14px; color: var(--body); }
 .prose h2 { margin-top: 18px; font-size: 24px; }
 .prose ul { margin: 0; padding-left: 22px; }
+.prose a { color: var(--accent); text-decoration: underline; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01s !important; transition-delay: 0s !important; }
@@ -338,3 +344,13 @@ input[type="date"][readonly] { opacity: .8; }
   .cal td.lbl { min-width: 150px; max-width: 150px; font-size: 13px; line-height: 1.25; }
   .cal td.lbl .desc { display: block; }
 }
+
+/* Согласие на cookie */
+.consent { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 60; max-width: 760px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; padding: 16px 18px; border-radius: 22px; background: var(--pop-bg); border: 1px solid var(--line2); box-shadow: var(--shadow); font-size: 15px; color: var(--body); }
+.consent[hidden] { display: none; }
+.consent p { margin: 0; flex: 1 1 320px; }
+.consent a { color: var(--accent); text-decoration: underline; }
+.consent-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.consent-btns .btn, .consent-btns .btn-ghost { padding: 10px 18px; font-size: 15px; }
+.ad-slot[hidden] { display: none; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }

@@ -23,6 +23,35 @@
     });
   });
 
+  /* Согласие на cookie: счетчик и реклама лежат в <template data-consent> и запускаются только после «Принять» */
+  var bar = $('[data-consent-bar]');
+  function runConsented() {
+    $$('template[data-consent]').forEach(function (t) {
+      var frag = t.content.cloneNode(true);
+      $$('script', frag).forEach(function (old) {
+        var n = document.createElement('script');
+        for (var i = 0; i < old.attributes.length; i++) n.setAttribute(old.attributes[i].name, old.attributes[i].value);
+        n.text = old.textContent;
+        old.parentNode.replaceChild(n, old);
+      });
+      var slot = t.parentNode;
+      slot.replaceChild(frag, t);
+      if (slot.classList && slot.classList.contains('ad-slot')) slot.hidden = false;
+    });
+  }
+  if (bar) {
+    var choice = store('vz-consent');
+    var optin = bar.getAttribute('data-mode') === 'optin';
+    if (optin && choice === 'yes') runConsented();
+    if (!choice) bar.hidden = false;
+    var yes = $('[data-consent-yes]', bar), no = $('[data-consent-no]', bar);
+    yes.addEventListener('click', function () { store('vz-consent', 'yes'); bar.hidden = true; if (optin) runConsented(); });
+    if (no) no.addEventListener('click', function () { store('vz-consent', 'no'); bar.hidden = true; });
+  }
+  $$('[data-consent-reset]').forEach(function (b) {
+    b.addEventListener('click', function () { store('vz-consent', null); location.reload(); });
+  });
+
   /* Меню на мобильных */
   var header = $('.site-header'), menuBtn = $('[data-menu-btn]');
   if (header && menuBtn) {

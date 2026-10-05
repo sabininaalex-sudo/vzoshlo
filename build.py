@@ -35,6 +35,16 @@ CFG.setdefault('ad_blocks', {})
 for _k in ('list', 'article', 'feed'):
     CFG['ad_blocks'][_k] = CFG['ad_blocks'].get(_k) or snippet('ad-' + _k)
 BASE = CFG['base_url'].rstrip('/')
+# Метрика и реклама ставят cookie. 'optin' — грузим их только после «Принять»; 'notice' — грузим сразу, плашка только сообщает.
+HAS_TRACK = bool(CFG['metrika_snippet'] or CFG['rsya_loader'] or any(CFG['ad_blocks'].values()))
+CONSENT = CFG.get('consent_mode') or 'optin'
+
+
+def gate(code):
+    """Код, который ставит cookie: в режиме optin лежит в <template> и запускается скриптом после согласия."""
+    if not code:
+        return ''
+    return f'<template data-consent>{code}</template>' if CONSENT == 'optin' else code
 
 NAV = [
     ('Что с растением?', '/chto-s-rasteniem/'),
@@ -99,11 +109,17 @@ def expand(body, root, extra):
     body = body.replace('{{problems_grid}}', extra.get('problems_grid', ''))
     body = body.replace('{{bot_url}}', BOT_URL)
     body = body.replace('{{operator}}', esc(CFG.get('operator_name') or 'владелец сайта'))
+    body = body.replace('{{operator_full}}', extra['operator_full'])
+    body = body.replace('{{hosting}}', esc(CFG.get('hosting') or 'хостинг-провайдер'))
+    body = body.replace('{{consent_reset}}', '<button class="linklike" type="button" data-consent-reset>Изменить выбор по cookie</button>' if HAS_TRACK else 'Сейчас на сайте нет счетчика и рекламы, cookie не ставятся.')
     body = body.replace('{{today}}', date.today().strftime('%d.%m.%Y'))
 
     def ad(m):
         code = (CFG.get('ad_blocks') or {}).get(m.group(1), '')
-        return f'<div class="ad-slot" data-ad="{m.group(1)}">{code}</div>' if code else ''
+        if not code:
+            return ''
+        hid = ' hidden' if CONSENT == 'optin' else ''
+        return f'<div class="ad-slot" data-ad="{m.group(1)}"{hid}>{gate(code)}</div>'
     body = re.sub(r'\{\{ad:(\w+)\}\}', ad, body)
     body = re.sub(r'(["\'(])@/', lambda m: m.group(1) + root, body)
     return body
@@ -139,6 +155,9 @@ def layout(meta, body, root, extra_css):
     url = meta['url']
     is404 = url == '/404.html'
     title = meta['title']
+    suffix = ' | ' + CFG['site_name']
+    if title.endswith(suffix) and len(title) > 68:
+        title = title[:-len(suffix)]  # длинный заголовок поисковик обрежет — название сайта убираем первым
     desc = meta['description']
     head = [
         '<meta charset="utf-8">',
@@ -155,7 +174,7 @@ def layout(meta, body, root, extra_css):
         head.append('<meta name="robots" content="noindex, follow">')
     else:
         full = BASE + url
-        og_title = title.replace(' | ' + CFG['site_name'], '')
+        og_title = title.replace(suffix, '')
         head += [
             f'<link rel="canonical" href="{full}">',
             f'<meta property="og:site_name" content="{esc(CFG["site_name"])}">',
@@ -169,9 +188,8 @@ def layout(meta, body, root, extra_css):
         if url == '/' and CFG.get('yandex_verification'):
             head.append(f'<meta name="yandex-verification" content="{esc(CFG["yandex_verification"])}">')
     head += [
-        '<link rel="preconnect" href="https://fonts.googleapis.com">',
-        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-        '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800;900&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">',
+        f'<link rel="preload" href="{root}assets/fonts/onest-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>',
+        f'<link rel="preload" href="{root}assets/fonts/nunito-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>',
         f'<link rel="stylesheet" href="{root}assets/css/site.css?v={ver("css/site.css")}">',
     ]
     if extra_css:
@@ -179,10 +197,24 @@ def layout(meta, body, root, extra_css):
     head.append(THEME_BOOT)
     if not is404:
         head.append(jsonld(meta).rstrip())
-    if CFG.get('rsya_loader'):
-        head.append(CFG['rsya_loader'])
-    if CFG.get('metrika_snippet') and not is404:
-        head.append(CFG['metrika_snippet'])
+    track = (CFG.get('rsya_loader') or '') + ('' if is404 else (CFG.get('metrika_snippet') or ''))
+    if track and CONSENT != 'optin':
+        head.append(track)
+    consent_bar = ''
+    track_tpl = gate(track) if CONSENT == 'optin' else ''
+    if HAS_TRACK:
+        pol = f'{root}politika-konfidencialnosti/'
+        if CONSENT == 'optin':
+            consent_bar = (f'<div class="consent" data-consent-bar data-mode="optin" hidden role="region" aria-label="Согласие на cookie">'
+                           f'<p>Можно включить cookie Яндекс Метрики и рекламы Яндекса? Так мы считаем посещения и показываем рекламу, которая оплачивает сайт. '
+                           f'Данные (cookie, IP-адрес, сведения об устройстве и просмотренных страницах) обрабатывает Яндекс. <a href="{pol}">Политика конфиденциальности</a></p>'
+                           f'<div class="consent-btns"><button class="btn" type="button" data-consent-yes>Принять</button>'
+                           f'<button class="btn-ghost" type="button" data-consent-no>Отказаться</button></div></div>')
+        else:
+            consent_bar = (f'<div class="consent" data-consent-bar data-mode="notice" hidden role="region" aria-label="Сообщение о cookie">'
+                           f'<p>Сайт использует cookie Яндекс Метрики и рекламы Яндекса: считаем посещения и показываем рекламу. '
+                           f'Как отказаться — в <a href="{pol}">политике конфиденциальности</a>.</p>'
+                           f'<div class="consent-btns"><button class="btn" type="button" data-consent-yes>Понятно</button></div></div>')
 
     nav = ''.join(
         f'<a href="{root}{u.lstrip("/")}"' + (' aria-current="page"' if url.startswith(u) else '') + f'>{esc(n)}</a>'
@@ -211,11 +243,12 @@ def layout(meta, body, root, extra_css):
 {chr(10).join(head)}
 </head>
 <body>
-{header}
+{track_tpl}{header}
 <main id="main">
 {main}
 </main>
 {footer}
+{consent_bar}
 <script src="{root}assets/js/site.js?v={ver('js/site.js')}" defer></script>
 </body>
 </html>
@@ -280,18 +313,24 @@ def plants_json():
     return json.dumps(out, ensure_ascii=False).replace('</', '<\\/')
 
 
+REL_SEEN = {}
+
+
 def related(p):
+    """Три похожих растения. При равной похожести берем то, на которое пока меньше ссылок, — чтобы ни один профиль не остался без входящих."""
     def sim(o):
         return len(set(o['tags']) & set(p['tags'])) + (o['cat'] == p['cat']) * 0.5
     others = [o for o in PLANTS if o['slug'] != p['slug']]
-    others.sort(key=lambda o: -sim(o))
+    others.sort(key=lambda o: (-sim(o), REL_SEEN.get(o['slug'], 0)))
+    for o in others[:3]:
+        REL_SEEN[o['slug']] = REL_SEEN.get(o['slug'], 0) + 1
     return others[:3]
 
 
 def plant_page(p):
     url = f'/rasteniya/{p["slug"]}/'
     cw = CAT_WORD[p['cat']]
-    aka = f' ({p["aka"]})' if p.get('aka') else ''
+    aka = f' ({p["aka"]})' if p.get('aka') and '(' not in p['n'] else ''
     desc = (f'{p["n"]}{aka}: свет, полив, влажность, температура, пересадка и размножение, частые беды. '
             f'{cw[2]} для кошек — с источником.')
     meta = {'url': url, 'title': p['title'] + ' | Взошло!', 'description': desc,
@@ -442,6 +481,8 @@ def main():
         'cats_json': cats_json, 'cats_tiles': cats_tiles,
         'contact': (f'<a href="mailto:{esc(email)}">{esc(email)}</a>' if email else 'адрес для связи появится здесь в ближайшее время'),
     }
+    op = [esc(x) for x in (CFG.get('operator_name'), CFG.get('operator_status'), CFG.get('operator_city')) if x]
+    extra['operator_full'] = ', '.join(op) if op else 'сведения о владельце появятся здесь до подключения счетчика и рекламы'
     extra['plants_grid'] = plants_grid()
     extra['quiz_json'] = quiz_json()
     extra['plants_json'] = plants_json()
@@ -485,6 +526,11 @@ def main():
     if CFG.get('custom_domain'):
         open(os.path.join(OUT, 'CNAME'), 'w').write(CFG['custom_domain'].strip() + '\n')
     print(f'Готово: {len(urls)} страниц в sitemap, папка docs/')
+    miss = [k for k in ('operator_name', 'contact_email') if not CFG.get(k)]
+    if miss:
+        print('ВНИМАНИЕ: в site.json не заполнено: ' + ', '.join(miss) + ' — без этого нельзя подключать Метрику и рекламу (политика без оператора).')
+    if HAS_TRACK and miss:
+        raise SystemExit('Счетчик или реклама подключены, а оператор и почта не указаны. Заполни site.json.')
 
 
 if __name__ == '__main__':
