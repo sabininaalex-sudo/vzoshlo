@@ -36,7 +36,44 @@ for _k in ('list', 'article', 'feed'):
     CFG['ad_blocks'][_k] = CFG['ad_blocks'].get(_k) or snippet('ad-' + _k)
 BASE = CFG['base_url'].rstrip('/')
 # Метрика и реклама ставят cookie. 'optin' — грузим их только после «Принять»; 'notice' — грузим сразу, плашка только сообщает.
-HAS_TRACK = bool(CFG['metrika_snippet'] or CFG['rsya_loader'] or any(CFG['ad_blocks'].values()))
+HAS_METRIKA = bool(CFG['metrika_snippet'])
+HAS_ADS = bool(CFG['rsya_loader'] or any(CFG['ad_blocks'].values()))
+HAS_TRACK = HAS_METRIKA or HAS_ADS
+# Что именно включается — от этого зависят тексты плашки и политики (согласие должно быть на то, что реально работает)
+SVC = [s for s, on in (('Метрика', HAS_METRIKA), ('Реклама', HAS_ADS)) if on]
+SVC_SHORT = {('Метрика',): 'cookie Яндекс Метрики', ('Реклама',): 'cookie рекламы Яндекса',
+             ('Метрика', 'Реклама'): 'cookie Яндекс Метрики и рекламы Яндекса'}.get(tuple(SVC), '')
+SVC_WHY = {('Метрика',): 'Так мы считаем посещения и понимаем, какие страницы полезны.',
+           ('Реклама',): 'Так мы показываем рекламу, которая оплачивает сайт.',
+           ('Метрика', 'Реклама'): 'Так мы считаем посещения и показываем рекламу, которая оплачивает сайт.'}.get(tuple(SVC), '')
+
+
+def svc_block():
+    if not HAS_TRACK:
+        return ('<p>Сейчас на сайте нет счетчика посещений и рекламы, поэтому cookie не ставятся. '
+                'Если мы их подключим, здесь появится их описание, а на сайте — плашка, где можно согласиться или отказаться.</p>')
+    items = []
+    if HAS_METRIKA:
+        items.append('<li><b>Яндекс Метрика</b> — статистика посещений. Цель: понять, какие страницы полезны, и улучшать сайт.</li>')
+    if HAS_ADS:
+        items.append('<li><b>Рекламная сеть Яндекса</b> — показ рекламы. Цель: реклама оплачивает работу сайта, поэтому он бесплатный.</li>')
+    one = len(items) == 1
+    n = 'включается сервис' if one else 'включаются два сервиса'
+    they = 'Он ставит файлы cookie и получает' if one else 'Они ставят файлы cookie и получают'
+    load = 'не загружается и его cookie не ставятся' if one else 'не загружаются и их cookie не ставятся'
+    what = ' и '.join(w for w, on in (('счетчик', HAS_METRIKA), ('реклама', HAS_ADS)) if on)
+    docs = '<a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener">политика конфиденциальности Яндекса</a>'
+    if HAS_METRIKA:
+        docs += ', <a href="https://yandex.ru/legal/metrica_termsofuse/" target="_blank" rel="noopener">условия Яндекс Метрики</a>'
+    off = 'без статистики и рекламы' if len(items) == 2 else ('без статистики' if HAS_METRIKA else 'без рекламы')
+    return (f'<p>Если на плашке внизу экрана ты нажал «Принять», на сайте {n} ООО «ЯНДЕКС» (119021, Москва, ул. Льва Толстого, д. 16):</p>\n'
+            f'<ul>\n{chr(10).join(items)}\n</ul>\n'
+            f'<p>{they}: IP-адрес, идентификаторы cookie, сведения о браузере, устройстве и операционной системе, '
+            'адреса просмотренных страниц, время посещения, источник перехода и действия на странице (прокрутка, клики). '
+            'По этим данным мы не устанавливаем твою личность и не соединяем их с другими сведениями о тебе.</p>\n'
+            f'<p>Правовое основание — твое согласие (пункт 1 части 1 статьи 6 закона № 152-ФЗ). Пока ты не нажал «Принять», {what} {load}. '
+            f'Как Яндекс обрабатывает данные, описано в его документах: {docs}.</p>\n'
+            f'<p>Без согласия сайт работает полностью, просто {off}.</p>')
 CONSENT = CFG.get('consent_mode') or 'optin'
 
 
@@ -111,7 +148,8 @@ def expand(body, root, extra):
     body = body.replace('{{operator}}', esc(CFG.get('operator_name') or 'владелец сайта'))
     body = body.replace('{{operator_full}}', extra['operator_full'])
     body = body.replace('{{hosting}}', esc(CFG.get('hosting') or 'хостинг-провайдер'))
-    body = body.replace('{{consent_reset}}', '<button class="linklike" type="button" data-consent-reset>Изменить выбор по cookie</button>' if HAS_TRACK else 'Сейчас на сайте нет счетчика и рекламы, cookie не ставятся.')
+    body = body.replace('{{svc_block}}', svc_block())
+    body = body.replace('{{consent_reset}}', '<button class="linklike" type="button" data-consent-reset>Изменить выбор по cookie</button>' if HAS_TRACK else 'Изменить выбор можно будет здесь, когда на сайте появится плашка.')
     body = body.replace('{{today}}', date.today().strftime('%d.%m.%Y'))
 
     def ad(m):
@@ -206,13 +244,13 @@ def layout(meta, body, root, extra_css):
         pol = f'{root}politika-konfidencialnosti/'
         if CONSENT == 'optin':
             consent_bar = (f'<div class="consent" data-consent-bar data-mode="optin" hidden role="region" aria-label="Согласие на cookie">'
-                           f'<p>Можно включить cookie Яндекс Метрики и рекламы Яндекса? Так мы считаем посещения и показываем рекламу, которая оплачивает сайт. '
+                           f'<p>Можно включить {SVC_SHORT}? {SVC_WHY} '
                            f'Данные (cookie, IP-адрес, сведения об устройстве и просмотренных страницах) обрабатывает Яндекс. <a href="{pol}">Политика конфиденциальности</a></p>'
                            f'<div class="consent-btns"><button class="btn" type="button" data-consent-yes>Принять</button>'
                            f'<button class="btn-ghost" type="button" data-consent-no>Отказаться</button></div></div>')
         else:
             consent_bar = (f'<div class="consent" data-consent-bar data-mode="notice" hidden role="region" aria-label="Сообщение о cookie">'
-                           f'<p>Сайт использует cookie Яндекс Метрики и рекламы Яндекса: считаем посещения и показываем рекламу. '
+                           f'<p>Сайт использует {SVC_SHORT}. {SVC_WHY} '
                            f'Как отказаться — в <a href="{pol}">политике конфиденциальности</a>.</p>'
                            f'<div class="consent-btns"><button class="btn" type="button" data-consent-yes>Понятно</button></div></div>')
 
