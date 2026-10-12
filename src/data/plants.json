@@ -31,7 +31,7 @@
  "prop": "Делением куста или листовыми черенками.",
  "probs": [["Гниль", "перелив или вода в поддоне"], ["Бурые пятна на листьях", "прямое солнце"], ["Черные пятна на черешках", "это норма, а не болезнь"], ["Вредители", "щитовка"]],
  "facts": ["Родом из саванновых лесов Восточной Африки.", "Назван по сходству с саговниками рода Zamia."],
- "cat": "care", "cat_note": "Отдельной карточки в базе ASPCA нет. NC State относит его к растениям средней токсичности (оксалаты кальция): рвота и понос, если кот съест заметный кусок.", "cat_url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
+ "cat": "toxic", "cat_note": "Ядовит для кошек: нерастворимые оксалаты кальция. Отдельной карточки в базе ASPCA нет, но ASPCA называет замиокулькас среди ядовитых комнатных растений, а NC State относит к растениям средней токсичности. Если погрыз — слюни, рвота, понос.", "cat_url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/zamioculcas-zamiifolia/"], ["Clemson HGIC", "https://hgic.clemson.edu/factsheet/zz-plant-zamioculcas-zamiifolia-indoor-care-growing-tips-plant-guide/"]],
  "quiz": {"light": ["mid", "low"], "dry": true, "easy": true, "bloom": false, "vibes": ["clean"], "why": "Стоик: мало света и редкий полив", "v": {"clean": "Глянцевые листья, будто их только что протерли"}}
 },
@@ -68,7 +68,7 @@
  "probs": [["Нет прорезей на листьях", "мало света"], ["Вредители", "щитовка"], ["Раздражение кожи после обрезки", "сок вызывает дерматит — работай в перчатках"]],
  "facts": ["Молодые листья цельные, дырки появляются с возрастом.", "Плод съедобен, вкус описывают как смесь банана и ананаса. Дома монстера плодоносит редко."],
  "cat": "toxic", "cat_note": "Ядовита для кошек по базе ASPCA: нерастворимые оксалаты кальция. Если погрыз — жжение во рту, слюни, рвота, трудно глотать.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/cutleaf-philodendron",
- "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/monstera-deliciosa/"], ["Clemson HGIC", "https://hgic.clemson.edu/factsheet/philodendron-pothos-monstera/"]],
+ "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/monstera-deliciosa/"], ["Clemson HGIC: филодендрон и монстера", "https://hgic.clemson.edu/factsheet/philodendron-pothos-monstera/"]],
  "quiz": {"light": ["bright", "mid"], "dry": true, "easy": true, "bloom": false, "vibes": ["jungle", "odd"], "why": "Быстро растет и радует", "v": {"jungle": "Огромные резные листья — главный символ джунглей", "odd": "Дырявые листья — классика странного"}}
 },
 {
@@ -103,7 +103,7 @@
  "prop": "Делением куста.",
  "probs": [["Бурые кончики", "пересушка, сухой воздух, прямое солнце или перекорм"], ["Не цветет", "растению меньше года или мало света"], ["Гниль", "перелив"], ["Вредители", "мучнистый червец"]],
  "facts": ["Белый «парус» — это покрывало соцветия. Примерно через 10 дней оно зеленеет.", "Это не лилия, хотя по-английски его зовут peace lily."],
- "cat": "toxic", "cat_note": "Ядовит для кошек: оксалаты кальция (NC State, Clemson). Если погрыз — боль во рту, слюни, рвота. Настоящие лилии (Lilium) для кошек гораздо опаснее.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/peace-lily",
+ "cat": "toxic", "cat_note": "Ядовит для кошек по базе ASPCA: нерастворимые оксалаты кальция. Если погрыз — боль во рту, слюни, рвота. Настоящие лилии (Lilium) для кошек гораздо опаснее.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/peace-lily",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/spathiphyllum/"], ["Clemson HGIC", "https://hgic.clemson.edu/factsheet/peace-lily/"]],
  "quiz": {"light": ["mid", "low"], "dry": false, "easy": true, "bloom": true, "vibes": ["clean", "bloom"], "why": "Цветет в квартире и честно показывает, когда хочет пить", "v": {"clean": "Белые цветы и темные листья — минимализм, который цветет", "bloom": "Белые «паруса» на цветоносах — цветет в обычной квартире"}}
 },
@@ -121,7 +121,7 @@
  "prop": "Черенками (лучше летом) и воздушными отводками.",
  "probs": [["Опадают листья", "перестановка, сквозняк, перелив или пересушка, мало света, пересадка"], ["Точки и паутинка на листьях", "паутинный клещ или щитовка"]],
  "facts": ["Молодые стволы можно переплетать косичкой.", "Белый сок раздражает кожу, поэтому обрезай в перчатках."],
- "cat": "toxic", "cat_note": "Ядовит для кошек по базе ASPCA: фицин и псорален в млечном соке. Если погрыз — раздражение желудка и кожи.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/weeping-fig",
+ "cat": "toxic", "cat_note": "Ядовит для кошек по базе ASPCA: фицин и псорален в млечном соке. Если погрыз — раздражение желудка и кожи.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/fig",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/ficus-benjamina/"], ["Clemson HGIC", "https://hgic.clemson.edu/factsheet/weeping-ficus/"], ["RHS", "https://rhs.org.uk/advice/profile?pid=669"]],
  "quiz": {"light": ["bright"], "dry": false, "easy": false, "fussy": true, "bloom": false, "vibes": ["jungle"], "why": "Настоящее домашнее дерево, но не любит переезды", "v": {"jungle": "Целое дерево в горшке"}}
 },
@@ -247,7 +247,7 @@
  "prop": "Делением куста и черенками, в том числе вытянувшимися стеблями.",
  "probs": [["Серые пятна, которые темнеют и становятся маслянистыми", "холод ниже 10–13 °C"], ["Бурые ломкие кончики", "избыток солей в грунте"], ["Бурые листья", "сухой воздух или сквозняк"], ["Вредители", "паутинный клещ, щитовка, мучнистый червец, тля"]],
  "facts": ["Родом с Филиппин и северо-востока Сулавеси.", "От диффенбахии отличается числом главных боковых жилок: у аглаонемы их 5–8."],
- "cat": "toxic", "cat_note": "Ядовита для кошек по базе ASPCA: нерастворимые оксалаты кальция. Если погрыз — боль и отек во рту, слюни, рвота, трудно глотать.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/chinese-evergreen",
+ "cat": "toxic", "cat_note": "Ядовита для кошек по базе ASPCA: нерастворимые оксалаты кальция; ASPCA называет ядовитым весь род. Если погрыз — боль и отек во рту, слюни, рвота, трудно глотать.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/chinese-evergreen",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/aglaonema-commutatum/"], ["UF/IFAS Gardening Solutions", "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/aglaonema/"], ["UF/IFAS EP160", "https://ask.ifas.ufl.edu/publication/EP160"]],
  "quiz": {"light": ["mid", "low"], "dry": false, "easy": true, "bloom": false, "vibes": ["clean", "odd"], "why": "Живет даже в темном углу", "v": {"clean": "Аккуратный куст с серебристым рисунком", "odd": "Листья с узором, будто раскрашенные вручную"}}
 },
@@ -319,7 +319,7 @@
  "prop": "Черенками: кусок стебля с узлом укореняется в воде или во влажном грунте без стимулятора. Можно отводками.",
  "probs": [["Голые стебли, тусклый цвет", "мало света"], ["Гниль", "перелив"], ["Пятна на листьях", "загущенная посадка или мокрая листва"], ["Вредители", "паутинный клещ, мучнистый червец, щитовка, тля, белокрылка"]],
  "facts": ["По-английски ее зовут inch plant: узлы на стебле примерно через дюйм (2,5 см).", "Традесканция приречная в Австралии, Новой Зеландии и на юго-востоке США считается инвазивным сорняком."],
- "cat": "care", "cat_note": "Традесканция приречная (T. fluminensis) по базе ASPCA ядовита для кошек: дерматит. Для зебрины и бледной карточек ASPCA нет; NC State пишет, что они раздражают кожу, а при поедании — рот и желудок животных.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/inch-plant",
+ "cat": "toxic", "cat_note": "Традесканция приречная (T. fluminensis) по базе ASPCA ядовита для кошек: дерматит. Для зебрины и бледной карточек ASPCA нет; NC State пишет, что они раздражают кожу, а при поедании — рот и желудок. Обычно несильно, но лучше держать повыше.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/inch-plant",
  "src": [["NC State: T. zebrina", "https://plants.ces.ncsu.edu/plants/tradescantia-zebrina/"], ["NC State: T. fluminensis", "https://plants.ces.ncsu.edu/plants/tradescantia-fluminensis/"], ["NC State: T. pallida", "https://plants.ces.ncsu.edu/plants/tradescantia-pallida/"], ["UW–Madison Extension", "https://hort.extension.wisc.edu/articles/tradescantia-zebrina/"]],
  "quiz": {"light": ["bright", "mid"], "dry": false, "easy": true, "bloom": false, "vibes": ["jungle", "odd"], "why": "Быстро растет и легко размножается", "v": {"jungle": "Плети свисают с полки уже через пару месяцев", "odd": "Полосатые серебристо-фиолетовые листья"}}
 },
@@ -355,7 +355,7 @@
  "prop": "Верхушечными черенками 7–12 см со стимулятором корнеобразования, корни через 3–5 недель.",
  "probs": [["Опадают бутоны", "температура не 18–24 °C или сквозняк"], ["Опадают бутоны и листья", "перестановка"], ["Желтые листья", "резкие перепады полива или температуры"], ["Вредители", "тля, паутинный клещ, щитовка"]],
  "facts": ["Каждый цветок живет один день, в диаметре 10–15 см.", "Rosa-sinensis переводится как «роза Китая»."],
- "cat": "care", "cat_note": "Для китайской розы вердикта ASPCA нет. Карточки ASPCA «Hibiscus» и «Rose of China» описывают другой вид, сирийский гибискус (Hibiscus syriacus), и переносить их вывод нельзя. Лучше держи повыше.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hibiscus",
+ "cat": "care", "cat_note": "Надежных данных про китайскую розу нет ни в одну сторону. Карточки ASPCA «Hibiscus» и «Rose of China» описывают другой вид, сирийский гибискус (Hibiscus syriacus), и переносить их вывод нельзя. На всякий случай держи повыше.", "cat_url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hibiscus",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/hibiscus-rosa-sinensis/"], ["UMN Extension", "https://extension.umn.edu/houseplants/hibiscus"]],
  "quiz": {"light": ["bright"], "dry": false, "easy": false, "fussy": true, "bloom": true, "vibes": ["bloom"], "why": "Крупные цветы, но не любит перемен", "v": {"bloom": "Цветы размером с ладонь — каждый день новый"}}
 },
@@ -391,7 +391,7 @@
  "prop": "В основном семенами.",
  "probs": [["Бурые кончики листьев", "избыток удобрений, сухой воздух или недолив"], ["Паутинный клещ", "сухой воздух и жара"], ["Корневая гниль", "частый полив или плохой дренаж"], ["Мучнистый червец", "протирай листья влажной тканью"]],
  "facts": ["Одна из самых популярных комнатных пальм: переносит сухой воздух и полумрак.", "Растет медленно, дома — до 1,5 м."],
- "cat": "safe", "cat_note": "По базе ASPCA не ядовита для кошек.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/parlor-palm",
+ "cat": "safe", "cat_note": "По базе ASPCA не ядовита для кошек. Не путай с саговой пальмой (цикасом): она для кошек смертельно опасна.", "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/parlor-palm",
  "src": [["NC State Extension", "https://plants.ces.ncsu.edu/plants/chamaedorea-elegans/"], ["Clemson HGIC", "https://hgic.clemson.edu/factsheet/indoor-palms/"]],
  "quiz": {"light": ["mid", "low"], "dry": false, "easy": true, "bloom": false, "vibes": ["clean", "jungle"], "why": "Пальма для полумрака, не ядовита для кошек", "v": {"clean": "Легкие перистые листья — воздушный силуэт", "jungle": "Пальма в углу — и уже тропики"}}
 }

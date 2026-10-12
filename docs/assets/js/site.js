@@ -273,17 +273,18 @@
   var dacha = $('[data-dacha]');
   if (dacha) {
     var REG = {
-      msk: { t: 'Средняя полоса · Москва', lf: [5, 10], ff: [9, 29], src: 'Средние даты заморозков в воздухе для Москвы (станция ВВЦ, норма 1971–2000) по статье «Климат Москвы»; данные «Погоды и климата». По новой норме безморозный период длиннее, так что даты с запасом. За городом заморозки обычно позже весной и раньше осенью.' },
+      msk: { t: 'Средняя полоса · Москва', lf: [5, 10], ff: [9, 29], src: 'Средние даты заморозков для Москвы за 1971–2000 по статье «Климат Москвы» в Википедии. Весенняя дата с запасом: в 2005–2015 годах последний заморозок был не позже 8 мая. Осенняя может оказаться ранней, поэтому чеснок сажай после первого настоящего заморозка. За городом заморозки обычно позже весной и раньше осенью.' },
       spb: { t: 'Северо-Запад · Санкт-Петербург', lf: [5, 5], ff: [10, 10], src: 'Средние даты заморозков по энциклопедии «Санкт-Петербург» (2006). Самый поздний весенний заморозок — 28 мая, самый ранний осенний — 15 сентября. Скорее всего, это городские данные: в пригородах безморозный период короче.' },
       own: { t: 'Свой регион', lf: null, ff: null, src: 'Введи средние даты последнего весеннего и первого осеннего заморозка для своего места — их публикуют региональные центры по гидрометеорологии.' }
     };
     var ROWS = [
       ['Томаты — посев на рассаду', 'lf', -56, -42, 'y'],
-      ['Томаты — в грунт (ночи выше +11 °C)', 'lf', 0, 21, 'g'],
+      ['Томаты — в грунт, когда ночи выше +11 °C', 'lf', 0, 21, 'g'],
       ['Огурцы — посев на рассаду', 'lf', -28, -21, 'y'],
-      ['Огурцы — посев в грунт (почва +21 °C)', 'lf', 0, 21, 'g'],
+      ['Огурцы — посев в грунт, когда почва +21 °C', 'lf', 0, 21, 'g'],
       ['Картофель — посадка', 'lf', -14, 0, 'g'],
-      ['Морковь, редис, горох — посев', 'lf', -28, -14, 'g'],
+      ['Редис, горох — посев', 'lf', -28, -14, 'g'],
+      ['Морковь — посев', 'lf', -14, 0, 'g'],
       ['Чеснок под зиму', 'ff', 7, 14, 'r']
     ];
     var MON = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
@@ -303,8 +304,10 @@
       var today = new Date(), th0 = half(today), body = '', soon = [];
       ROWS.forEach(function (r) {
         var base = r[1] === 'lf' ? LF : FF, a = add(base, r[2]), b = add(base, r[3]), ha = half(a), hb = half(b);
+        var wrap = a.getFullYear() !== b.getFullYear();
+        function on(i) { return wrap ? (i >= ha || i <= hb) : (i >= ha && i <= hb); }
         body += '<tr><td class="lbl">' + r[0] + '<span class="desc"> ' + dstr(a) + '–' + dstr(b) + '</span></td>';
-        for (var i = 0; i < 24; i++) body += '<td class="c' + (i >= ha && i <= hb ? ' on-' + r[4] : '') + (i === th0 ? ' now' : '') + '"><span class="visually-hidden">' + (i >= ha && i <= hb ? 'да' : '') + '</span></td>';
+        for (var i = 0; i < 24; i++) body += '<td class="c' + (on(i) ? ' on-' + r[4] : '') + (i === th0 ? ' now' : '') + '"><span class="visually-hidden">' + (on(i) ? 'да' : '') + '</span></td>';
         body += '</tr>';
         var days = Math.round((a - today) / 864e5), end = Math.round((b - today) / 864e5);
         if (end >= 0 && days <= 21) soon.push([r[0], days, a, b]);
@@ -489,9 +492,9 @@
       q = norm(q); if (!q) return -2;
       for (var i = 0; i < DATA.length; i++) {
         var names = [DATA[i].n, DATA[i].l].concat(DATA[i].syn);
-        for (var j = 0; j < names.length; j++) { var n = norm(names[j]); if (n === q || n.indexOf(q) === 0 || q.indexOf(n) === 0) return i; }
+        for (var j = 0; j < names.length; j++) { var n = norm(names[j]); if (n === q || (q.length >= 5 && n.indexOf(q) === 0)) return i; }
       }
-      for (var k = 0; k < DATA.length; k++) if (q.length >= 4 && norm(DATA[k].n).indexOf(q) >= 0) return k;
+      for (var k = 0; k < DATA.length; k++) if (q.length >= 5 && norm(DATA[k].n).indexOf(q) >= 0) return k;
       return -1;
     }
     function reveal() { if (window.innerWidth < 1000 && stage.getBoundingClientRect().top < 0) stage.scrollIntoView({ behavior: 'smooth', block: 'start' }); }

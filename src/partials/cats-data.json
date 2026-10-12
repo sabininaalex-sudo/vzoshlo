@@ -5,8 +5,7 @@
   "v": "safe",
   "syn": [
    "паучник",
-   "паук",
-   "spider"
+   "spider plant"
   ],
   "u": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/spider-plant",
   "why": "В базе ASPCA — нетоксичен для кошек.",
@@ -43,9 +42,9 @@
   "l": "Phalaenopsis",
   "v": "safe",
   "syn": [
-   "орхидея",
    "фаленопсис",
-   "phalaenopsis"
+   "phalaenopsis",
+   "орхидея фаленопсис"
   ],
   "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/phalaenopsis-orchid",
   "why": "В базе ASPCA — нетоксична для кошек.",
@@ -57,12 +56,13 @@
   "l": "Nephrolepis exaltata",
   "v": "safe",
   "syn": [
-   "папоротник",
-   "бостонский"
+   "бостонский папоротник",
+   "nephrolepis",
+   "boston fern"
   ],
   "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/boston-fern",
   "why": "В базе ASPCA — нетоксичен для кошек.",
-  "more": "Не путай с другими «папоротниками»: не все они безопасны.",
+  "more": "Не путай с другими «папоротниками»: например, аспарагус перистый (его тоже зовут папоротником) по ASPCA ядовит.",
   "s": "nefrolepis"
  },
  {
@@ -70,14 +70,13 @@
   "l": "Chamaedorea elegans",
   "v": "safe",
   "syn": [
-   "пальма",
    "хамедорея изящная",
    "chamaedorea",
    "parlor palm"
   ],
   "u": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/parlor-palm",
   "why": "В базе ASPCA — нетоксична для кошек.",
-  "more": "Редкий случай: пальма, которую можно держать рядом с котом.",
+  "more": "Эту пальму можно держать рядом с котом. Но не путай ее с саговой пальмой (цикасом): она для кошек смертельно опасна.",
   "s": "hamedoreya"
  },
  {
@@ -182,7 +181,7 @@
   ],
   "u": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/chinese-evergreen",
   "why": "Нерастворимые оксалаты кальция.",
-  "more": "Если погрыз: боль и отек во рту, слюни, рвота, трудно глотать.",
+  "more": "Если погрыз: боль и отек во рту, слюни, рвота, трудно глотать. ASPCA называет ядовитым весь род.",
   "s": "aglaonema"
  },
  {
@@ -259,29 +258,29 @@
  {
   "n": "Замиокулькас",
   "l": "Zamioculcas zamiifolia",
-  "v": "care",
+  "v": "toxic",
   "syn": [
    "долларовое дерево",
    "zz",
-   "замия"
+   "zamioculcas"
   ],
   "u": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets",
-  "why": "Отдельной карточки в базе ASPCA нет.",
-  "more": "Но ASPCA упоминает его среди растений с оксалатами кальция: слюни, рвота, понос. Лучше повыше.",
+  "why": "Нерастворимые оксалаты кальция.",
+  "more": "Если погрыз: слюни, рвота, понос. Отдельной карточки в базе ASPCA нет, но ASPCA называет его среди ядовитых комнатных растений, а NC State — растением средней токсичности. Не путай с замией (саговником): она смертельно опасна.",
   "s": "zamiokulkas"
  },
  {
   "n": "Традесканция",
   "l": "Tradescantia",
-  "v": "care",
+  "v": "toxic",
   "syn": [
    "tradescantia",
    "зебрина",
    "традесканция зебрина"
   ],
   "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/inch-plant",
-  "why": "Традесканция приречная в базе ASPCA ядовита: дерматит.",
-  "more": "Для зебрины и бледной карточек ASPCA нет. По данным NC State они раздражают кожу, рот и желудок. Лучше повыше.",
+  "why": "Традесканция приречная в базе ASPCA ядовита для кошек: дерматит.",
+  "more": "Для зебрины и бледной карточек ASPCA нет; по NC State они раздражают кожу, а если погрыз — рот и желудок. Обычно несильно.",
   "s": "tradeskanciya"
  },
  {
@@ -295,7 +294,7 @@
   ],
   "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hibiscus",
   "why": "Для китайской розы вердикта ASPCA нет.",
-  "more": "Карточка ASPCA «Hibiscus» — про другой вид, сирийский гибискус. Пока нет данных, лучше повыше.",
+  "more": "Карточка ASPCA «Hibiscus» — про другой вид, сирийский гибискус. Надежных данных про китайскую розу нет ни в одну сторону, поэтому на всякий случай держи повыше.",
   "s": "gibiskus"
  }
 ]

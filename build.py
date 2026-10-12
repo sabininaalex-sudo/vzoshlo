@@ -296,7 +296,7 @@ def layout(meta, body, root, extra_css):
 def cats_extra():
     data = json.load(open(os.path.join(SRC, 'partials', 'cats-data.json'), encoding='utf-8'))
     dot = {'safe': 'g', 'toxic': 'r', 'care': 'y'}
-    word = {'safe': 'безопасно', 'toxic': 'ядовито', 'care': 'осторожно'}
+    word = {'safe': 'не ядовито', 'toxic': 'ядовито', 'care': 'осторожно'}
     tiles = ''.join(
         f'<button class="tile" type="button" data-i="{i}" aria-pressed="false"><span class="dot {dot[p["v"]]}" aria-hidden="true"></span>'
         f'<img src="@/assets/img/plants/{p["s"]}.webp" alt="" width="84" height="84" loading="lazy"><span class="nm">{esc(p["n"])}</span>'
@@ -307,7 +307,7 @@ def cats_extra():
 
 PLANTS = json.load(open(os.path.join(SRC, 'data', 'plants.json'), encoding='utf-8'))
 TAG_WORD = {'new': ('Для новичков', 'g'), 'cat': ('Можно с котом', 'g'), 'shade': ('Тень', 'y'), 'bloom': ('Цветет', 'y'), 'light': ('Светолюбивое', 'y')}
-CAT_WORD = {'safe': ('Безопасно для кошек', 'g', 'Безопасно'), 'toxic': ('Ядовито для кошек', 'r', 'Ядовито'), 'care': ('Кошкам — осторожно', 'y', 'Осторожно')}
+CAT_WORD = {'safe': ('Не ядовито для кошек', 'g', 'Не ядовито'), 'toxic': ('Ядовито для кошек', 'r', 'Ядовито'), 'care': ('Кошкам — осторожно', 'y', 'Осторожно')}
 LEVEL_CLS = {'Для новичков': 'g', 'Средняя': 'y'}
 
 
@@ -445,6 +445,16 @@ BOT_CARD = (f'<div class="card bot-card"><div class="eyebrow">Напоминал
             f'<p style="margin-top:10px"><a class="btn" href="{BOT_URL}" target="_blank" rel="noopener">Открыть бота</a></p></div>')
 
 
+SOAP_CARD = ('<section class="card note"><h2 style="font-size:21px">Как обрабатывать мылом или маслом без ожогов</h2>'
+             '<ul class="plist" style="margin-top:8px">'
+             '<li>Не обрабатывай растение на солнце и не обрабатывай пересохшее — сначала полей.</li>'
+             '<li>Сначала проверь средство на одном листе и подожди 2 дня: ожог проявляется не сразу.</li>'
+             '<li>Инсектицидное мыло нельзя на плюще, адиантуме, диффенбахии, шеффлере, молочае Милия, толстянке, бегонии, фуксии, '
+             'бальзамине, афеландре и некоторых пальмах. Для них — душ и ручная чистка.</li>'
+             '<li>Работай строго по инструкции на упаковке.</li></ul>'
+             '<p class="desc" style="margin-top:8px">По Clemson HGIC.</p></section>')
+
+
 def problems_grid():
     cards = ['<a class="card" href="@/chto-s-rasteniem/zhelteyut-listya/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Желтеют листья</h2>'
              '<span class="desc">Перелив, мало света или старые нижние листья</span></a>']
@@ -468,6 +478,8 @@ def problem_page(p):
                       f'<p><span class="k">Как понять: </span>{esc(how)}</p><p><span class="k">Что делать: </span>{esc(do)}</p></div></article>')
         if i == 1:
             causes.append('{{ad:article}}')
+    if any('мыл' in c[2] or 'масл' in c[2] for c in p['causes']):
+        causes.append(SOAP_CARD)
     plan = ''.join(f'<li>{esc(s)}</li>' for s in p['plan'])
     prev = ''.join(f'<li>{esc(s)}</li>' for s in p['prev'])
     facts = ''.join(f'<li>{esc(s)}</li>' for s in p['facts'])
