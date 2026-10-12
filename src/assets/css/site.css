@@ -354,3 +354,16 @@ input[type="date"][readonly] { opacity: .8; }
 .consent-btns .btn, .consent-btns .btn-ghost { padding: 10px 18px; font-size: 15px; }
 .ad-slot[hidden] { display: none; }
 .linklike { background: none; border: 0; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
+
+/* Подоконник */
+.sill-card { display: flex; flex-direction: column; gap: 10px; }
+.sill-card .pic img { filter: drop-shadow(0 10px 12px rgba(0,0,0,.25)); }
+.sill-card ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; color: var(--body); }
+.sill-card details { font-size: 15px; color: var(--body); }
+.sill-card summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.sill-card details p { margin: 8px 0 0; }
+.sill-card .src { font-size: 13px; color: var(--muted); }
+.mz-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.mz-table th, .mz-table td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.mz-table th { color: var(--muted); font-weight: 500; font-size: 13px; }
+.table-wrap { overflow-x: auto; }

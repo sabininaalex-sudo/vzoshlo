@@ -101,7 +101,7 @@
       c.addEventListener('click', function () {
         var f = c.getAttribute('data-filter');
         chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
-        cards.forEach(function (card) { card.hidden = f !== 'all' && card.getAttribute('data-tags').split(' ').indexOf(f) < 0; });
+        cards.forEach(function (card) { var t = card.getAttribute('data-tags').split(' '); card.hidden = card.hasAttribute('data-only') ? t.indexOf(f) < 0 : (f !== 'all' && t.indexOf(f) < 0); });
       });
     });
   }
