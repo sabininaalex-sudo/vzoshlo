@@ -141,6 +141,7 @@ def expand(body, root, extra):
     body = body.replace('{{cats_tiles}}', extra['cats_tiles'])
     body = body.replace('{{contact}}', extra['contact'])
     body = body.replace('{{plants_grid}}', extra['plants_grid'])
+    body = body.replace('{{pod}}', extra.get('pod', ''))
     body = body.replace('{{quiz_json}}', extra['quiz_json'])
     body = body.replace('{{plants_json}}', extra.get('plants_json', ''))
     body = body.replace('{{problems_grid}}', extra.get('problems_grid', ''))
@@ -455,6 +456,28 @@ SOAP_CARD = ('<section class="card note"><h2 style="font-size:21px">Как об�
              '<p class="desc" style="margin-top:8px">По Clemson HGIC.</p></section>')
 
 
+def pod_html():
+    """Растение дня: данные в src/data/pod.json, растение берется из каталога (плашка о кошках и картинка — из профиля)."""
+    d = json.load(open(os.path.join(SRC, 'data', 'pod.json'), encoding='utf-8'))
+    p = PLANT_BY[d['slug']]
+    cw = CAT_WORD[p['cat']]
+    n = p['n']; low = n[0].lower() + n[1:]
+    return (f'''<div class="pod-wrap">
+<div class="pop" data-pop hidden role="dialog" aria-label="Растение дня: {esc(low)}">
+<img class="peek" src="@/assets/img/plants/{p["slug"]}.webp" alt="" width="112" height="134">
+<button class="x" type="button" data-pop-close aria-label="Закрыть">✕</button>
+<div class="k">{esc(d["hello"])}</div>
+<p>{esc(d["text"])}</p>
+<div class="row"><span class="tag {cw[1]}">{cw[0]}</span><a class="btn" href="@/rasteniya/{p["slug"]}/">Хочу такой →</a></div>
+</div>
+<button class="pod" type="button" data-pod aria-expanded="false" aria-label="Растение дня: {esc(low)}, открыть подсказку">
+<img src="@/assets/img/plants/{p["slug"]}.webp" alt="" width="84" height="84">
+<span style="display:flex;flex-direction:column;gap:4px"><span class="t1">Растение дня</span><span class="t2">{esc(n)}</span><span class="t3">{esc(d["short"])}</span></span>
+<span class="go" aria-hidden="true">→</span>
+</button>
+</div>''')
+
+
 def problems_grid():
     cards = ['<a class="card" href="@/chto-s-rasteniem/zhelteyut-listya/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Желтеют листья</h2>'
              '<span class="desc">Перелив, мало света или старые нижние листья</span></a>']
@@ -537,6 +560,7 @@ def main():
     extra['quiz_json'] = quiz_json()
     extra['plants_json'] = plants_json()
     extra['problems_grid'] = problems_grid()
+    extra['pod'] = pod_html()
     pages = []
     for name in sorted(os.listdir(os.path.join(SRC, 'pages'))):
         if name.endswith('.html'):
