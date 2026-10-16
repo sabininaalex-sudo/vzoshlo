@@ -379,7 +379,7 @@ def plant_page(p):
     tags = lvl + f'<span class="tag {cw[1]}">{cw[0]}</span>' + ''.join(
         f'<span class="tag {TAG_WORD[t][1]}">{TAG_WORD[t][0]}</span>' for t in p['tags'] if t in ('shade', 'bloom', 'light'))
     aka_line = f'<div class="desc">Еще называют: {esc(p["aka"])}</div>' if p.get('aka') else ''
-    sec = lambda title, text: f'<section class="card"><h2>{title}</h2><p style="margin-top:8px">{esc(text)}</p></section>'
+    sec = lambda title, text, extra='': f'<section class="card"><h2>{title}</h2><p style="margin-top:8px">{esc(text)}</p>{extra}</section>'
     probs = ''.join(f'<li><b>{esc(a)}</b> — {esc(b)}</li>' for a, b in p['probs'])
     facts = ''.join(f'<li>{esc(f)}</li>' for f in p['facts'])
     srcs = ''.join(f'<li><a href="{esc(u)}" target="_blank" rel="noopener">{esc(t)}</a></li>' for t, u in p['src'])
@@ -413,12 +413,12 @@ def plant_page(p):
 <div class="with-aside section">
 <div style="display:flex;flex-direction:column;gap:16px">
 {sec("Характер", p["char"])}
-{sec("Свет", p["light"])}
+{sec("Свет", p["light"], '<p style="margin-top:8px"><a href="@/instrumenty/svet-u-okna/" style="color:var(--accent)">Сколько света у твоего окна&nbsp;→</a></p>')}
 {sec("Полив", p["water"])}
 {{{{ad:article}}}}
 {sec("Влажность", p["hum"])}
 {sec("Температура", p["temp"])}
-{sec("Грунт и пересадка", p["soil"])}
+{sec("Грунт и пересадка", p["soil"], '<p style="margin-top:8px"><a href="@/instrumenty/gorshok/" style="color:var(--accent)">Какой горшок нужен при пересадке&nbsp;→</a><br><a href="@/instrumenty/grunt/" style="color:var(--accent)">Состав грунта: калькулятор смеси&nbsp;→</a></p>')}
 {sec("Размножение", p["prop"])}
 <section class="card"><h2>Частые беды</h2><ul class="plist">{probs}</ul>{'<p style="margin-top:12px"><b>Подробные разборы:</b></p><ul class="plist">' + prob_links + '</ul>' if prob_links else ''}</section>
 <section class="card"><h2>Интересно</h2><ul class="plist">{facts}</ul></section>
@@ -542,7 +542,17 @@ def problem_page(p):
 
 
 def main():
+    # lastmod в sitemap: дата меняется, только если изменился HTML страницы
+    old_html, old_mod = {}, {}
     if os.path.isdir(OUT):
+        smp = os.path.join(OUT, 'sitemap.xml')
+        if os.path.exists(smp):
+            for loc, mod in re.findall(r'<loc>(.*?)</loc><lastmod>(.*?)</lastmod>', open(smp, encoding='utf-8').read()):
+                old_mod[loc[len(BASE):]] = mod
+        for u in old_mod:
+            pth = out_path(u)
+            if os.path.exists(pth):
+                old_html[u] = open(pth, encoding='utf-8').read()
         shutil.rmtree(OUT)
     shutil.copytree(os.path.join(SRC, 'assets'), os.path.join(OUT, 'assets'))
     for f in os.listdir(os.path.join(SRC, 'static')):
@@ -591,7 +601,10 @@ def main():
     # sitemap и robots
     today = date.today().isoformat()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    sm += [f'  <url><loc>{BASE}{u}</loc><lastmod>{today}</lastmod></url>' for u in sorted(urls)]
+    def lastmod(u):
+        same = u in old_html and open(out_path(u), encoding='utf-8').read() == old_html[u]
+        return old_mod[u] if same and old_mod.get(u) else today
+    sm += [f'  <url><loc>{BASE}{u}</loc><lastmod>{lastmod(u)}</lastmod></url>' for u in sorted(urls)]
     sm.append('</urlset>')
     open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write('\n'.join(sm) + '\n')
     open(os.path.join(OUT, 'robots.txt'), 'w', encoding='utf-8').write(
