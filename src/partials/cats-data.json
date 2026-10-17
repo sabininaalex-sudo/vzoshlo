@@ -80,6 +80,39 @@
   "s": "hamedoreya"
  },
  {
+  "n": "Декабрист",
+  "l": "Schlumbergera truncata, Schlumbergera × buckleyi",
+  "v": "safe",
+  "syn": [
+   "шлюмбергера",
+   "зигокактус",
+   "рождественник",
+   "рождественский кактус",
+   "christmas cactus",
+   "schlumbergera"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/christmas-cactus",
+  "why": "В базе ASPCA — нетоксичен для кошек.",
+  "more": "Карточка ASPCA Christmas Cactus (в ней латынь Schlumbergera bridgesii) отмечает его как неядовитый для кошек. Колючек у декабриста нет, но погрызенные членики растению не на пользу — лучше повыше.",
+  "s": "dekabrist"
+ },
+ {
+  "n": "Фиалка (сенполия)",
+  "l": "Saintpaulia spp. (Streptocarpus ionanthus)",
+  "v": "safe",
+  "syn": [
+   "сенполия",
+   "узамбарская фиалка",
+   "фиалка комнатная",
+   "saintpaulia",
+   "african violet"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/african-violet",
+  "why": "В базе ASPCA — нетоксична для кошек.",
+  "more": "Комнатную фиалку можно держать рядом с котом. Запись про сенполию; садовые фиалки и анютины глазки (Viola) — другие растения, к ним этот вывод не относится.",
+  "s": "fialka"
+ },
+ {
   "n": "Монстера",
   "l": "Monstera deliciosa",
   "v": "toxic",

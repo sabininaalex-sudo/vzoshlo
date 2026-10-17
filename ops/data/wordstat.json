@@ -1,0 +1,544 @@
+{
+ "updated": "2026-10-17",
+ "period": "01.09.2026–30.09.2026",
+ "source": "wordstat.yandex.ru, вся Россия, все устройства, помесячная динамика",
+ "prev_note": "prev_* — август 2026 (прошлого файла не было), yoy_* — сентябрь 2025",
+ "catalog": {
+  "hlorofitum": {
+   "q": "хлорофитум",
+   "total": 112211,
+   "care": 6722,
+   "prev_total": 111286,
+   "prev_care": 5639,
+   "yoy_total": 88658,
+   "yoy_care": 5876
+  },
+  "zamiokulkas": {
+   "q": "замиокулькас",
+   "total": 385603,
+   "care": 18121,
+   "prev_total": 425302,
+   "prev_care": 17441,
+   "yoy_total": 284112,
+   "yoy_care": 15269
+  },
+  "sansevieriya": {
+   "q": "сансевиерия",
+   "total": 192339,
+   "care": 7648,
+   "prev_total": 216840,
+   "prev_care": 7743,
+   "yoy_total": 128449,
+   "yoy_care": 6685
+  },
+  "monstera": {
+   "q": "монстера",
+   "total": 523090,
+   "care": 8336,
+   "prev_total": 627209,
+   "prev_care": 8286,
+   "yoy_total": 392241,
+   "yoy_care": 8053
+  },
+  "kalateya": {
+   "q": "калатея",
+   "total": 140185,
+   "care": 18048,
+   "prev_total": 169845,
+   "prev_care": 19666,
+   "yoy_total": 76188,
+   "yoy_care": 8811
+  },
+  "spatifillum": {
+   "q": "спатифиллум",
+   "total": 218553,
+   "care": 10515,
+   "prev_total": 250099,
+   "prev_care": 10209,
+   "yoy_total": 177935,
+   "yoy_care": 9956
+  },
+  "fikus-bendzhamina": {
+   "q": "фикус бенджамина",
+   "total": 122000,
+   "care": 9700,
+   "prev_total": 129506,
+   "prev_care": 9435,
+   "yoy_total": 113780,
+   "yoy_care": 9211
+  },
+  "peperomiya": {
+   "q": "пеперомия",
+   "total": 80709,
+   "care": 7572,
+   "prev_total": 93390,
+   "prev_care": 7678,
+   "yoy_total": 59378,
+   "yoy_care": 7047
+  },
+  "anturium": {
+   "q": "антуриум",
+   "total": 262771,
+   "care": 13104,
+   "prev_total": 308235,
+   "prev_care": 13153,
+   "yoy_total": 209234,
+   "yoy_care": 12322
+  },
+  "dracena": {
+   "q": "драцена",
+   "total": 193666,
+   "care": 14702,
+   "prev_total": 222998,
+   "prev_care": 14370,
+   "yoy_total": 162556,
+   "yoy_care": 14123
+  },
+  "orhideya-falenopsis": {
+   "q": "фаленопсис",
+   "total": 72940,
+   "care": 2232,
+   "prev_total": 86091,
+   "prev_care": 1759,
+   "yoy_total": 67565,
+   "yoy_care": 1827
+  },
+  "nefrolepis": {
+   "q": "нефролепис",
+   "total": 21897,
+   "care": 1670,
+   "prev_total": 26153,
+   "prev_care": 1827,
+   "yoy_total": 14661,
+   "yoy_care": 1414
+  },
+  "begoniya": {
+   "q": "бегония",
+   "total": 356874,
+   "care": 23673,
+   "prev_total": 348309,
+   "prev_care": 19092,
+   "yoy_total": 287586,
+   "yoy_care": 24707
+  },
+  "aglaonema": {
+   "q": "аглаонема",
+   "total": 217364,
+   "care": 17056,
+   "prev_total": 271452,
+   "prev_care": 17814,
+   "yoy_total": 138925,
+   "yoy_care": 9458
+  },
+  "filodendron": {
+   "q": "филодендрон",
+   "total": 209438,
+   "care": 14751,
+   "prev_total": 257880,
+   "prev_care": 15268,
+   "yoy_total": 146505,
+   "yoy_care": 12665
+  },
+  "alokaziya": {
+   "q": "алоказия",
+   "total": 326998,
+   "care": 11665,
+   "prev_total": 373350,
+   "prev_care": 11273,
+   "yoy_total": 211330,
+   "yoy_care": 10816
+  },
+  "adenium": {
+   "q": "адениум",
+   "total": 130244,
+   "care": 10043,
+   "prev_total": 163211,
+   "prev_care": 10799,
+   "yoy_total": 118734,
+   "yoy_care": 11105
+  },
+  "tradeskanciya": {
+   "q": "традесканция",
+   "total": 161086,
+   "care": 10102,
+   "prev_total": 176077,
+   "prev_care": 10570,
+   "yoy_total": 127491,
+   "yoy_care": 9863
+  },
+  "kalanhoe": {
+   "q": "каланхоэ",
+   "total": 158074,
+   "care": 9312,
+   "prev_total": 158550,
+   "prev_care": 8483,
+   "yoy_total": 150205,
+   "yoy_care": 11326
+  },
+  "gibiskus": {
+   "q": "гибискус",
+   "total": 230015,
+   "care": 8761,
+   "prev_total": 296103,
+   "prev_care": 8811,
+   "yoy_total": 182178,
+   "yoy_care": 8891
+  },
+  "pelargoniya": {
+   "q": "герань",
+   "total": 594014,
+   "care": 9002,
+   "prev_total": 539897,
+   "prev_care": 7353,
+   "yoy_total": 428840,
+   "yoy_care": 9917
+  },
+  "hamedoreya": {
+   "q": "хамедорея",
+   "total": 53289,
+   "care": 7298,
+   "prev_total": 61053,
+   "prev_care": 7565,
+   "yoy_total": 44987,
+   "yoy_care": 7596
+  }
+ },
+ "candidates": {
+  "фиалка": {
+   "total": 842565,
+   "care": 6972,
+   "prev_total": 1670150,
+   "prev_care": 6957,
+   "note": "сенполия; «фиалка» включает и садовые фиалки"
+  },
+  "сенполия": {
+   "total": 15198,
+   "care": 292,
+   "prev_total": 17071,
+   "prev_care": 295,
+   "note": "синоним фиалки"
+  },
+  "декабрист": {
+   "total": 465485,
+   "care": 6412,
+   "prev_total": 392327,
+   "prev_care": 4606,
+   "note": "шлюмбергера"
+  },
+  "шлюмбергера": {
+   "total": 12063,
+   "care": 703,
+   "prev_total": 13316,
+   "prev_care": 567,
+   "note": "синоним декабриста"
+  },
+  "алоэ": {
+   "total": 600554,
+   "care": 4458,
+   "prev_total": 690449,
+   "prev_care": 4520,
+   "note": ""
+  },
+  "толстянка": {
+   "total": 56167,
+   "care": 2873,
+   "prev_total": 61590,
+   "prev_care": 2793,
+   "note": ""
+  },
+  "денежное дерево": {
+   "total": 131522,
+   "care": 5925,
+   "prev_total": 139937,
+   "prev_care": 5929,
+   "note": "обычно толстянка, иногда пахира"
+  },
+  "фикус каучуконосный": {
+   "total": 25496,
+   "care": 1199,
+   "prev_total": 31057,
+   "prev_care": 1435,
+   "note": "он же фикус эластика"
+  },
+  "фикус эластика": {
+   "total": 35524,
+   "care": 3010,
+   "prev_total": 41111,
+   "prev_care": 2764,
+   "note": "фикус каучуконосный"
+  },
+  "кротон": {
+   "total": 71457,
+   "care": 4775,
+   "prev_total": 77243,
+   "prev_care": 4380,
+   "note": "кодиеум"
+  },
+  "кодиеум": {
+   "total": 22202,
+   "care": 2519,
+   "prev_total": 25332,
+   "prev_care": 2521,
+   "note": "синоним кротона"
+  },
+  "диффенбахия": {
+   "total": 86730,
+   "care": 4497,
+   "prev_total": 126143,
+   "prev_care": 5097,
+   "note": ""
+  },
+  "юкка": {
+   "total": 362274,
+   "care": 4852,
+   "prev_total": 372433,
+   "prev_care": 4413,
+   "note": ""
+  },
+  "сциндапсус": {
+   "total": 45061,
+   "care": 2009,
+   "prev_total": 48963,
+   "prev_care": 1809,
+   "note": "в продаже часто эпипремнум"
+  },
+  "эпипремнум": {
+   "total": 45471,
+   "care": 2722,
+   "prev_total": 53654,
+   "prev_care": 2604,
+   "note": "сциндапсус"
+  },
+  "хойя": {
+   "total": 473140,
+   "care": 5250,
+   "prev_total": 514984,
+   "prev_care": 5239,
+   "note": ""
+  },
+  "сингониум": {
+   "total": 97191,
+   "care": 5132,
+   "prev_total": 114247,
+   "prev_care": 5281,
+   "note": ""
+  },
+  "пилея": {
+   "total": 25327,
+   "care": 3088,
+   "prev_total": 27900,
+   "prev_care": 2920,
+   "note": ""
+  },
+  "фиттония": {
+   "total": 16148,
+   "care": 1814,
+   "prev_total": 18626,
+   "prev_care": 1737,
+   "note": ""
+  },
+  "гиппеаструм": {
+   "total": 40235,
+   "care": 3584,
+   "prev_total": 37713,
+   "prev_care": 2465,
+   "note": ""
+  },
+  "пуансеттия": {
+   "total": 13393,
+   "care": 1054,
+   "prev_total": 13412,
+   "prev_care": 809,
+   "note": ""
+  },
+  "цикламен": {
+   "total": 66458,
+   "care": 5541,
+   "prev_total": 70329,
+   "prev_care": 4462,
+   "note": ""
+  },
+  "азалия": {
+   "total": 143879,
+   "care": 3193,
+   "prev_total": 158795,
+   "prev_care": 2160,
+   "note": ""
+  },
+  "комнатный лимон": {
+   "total": 10353,
+   "care": 532,
+   "prev_total": 10184,
+   "prev_care": 476,
+   "note": ""
+  },
+  "мирт": {
+   "total": 120864,
+   "care": 2690,
+   "prev_total": 126728,
+   "prev_care": 2613,
+   "note": ""
+  },
+  "маранта": {
+   "total": 49864,
+   "care": 2757,
+   "prev_total": 59603,
+   "prev_care": 2924,
+   "note": ""
+  },
+  "строманта": {
+   "total": 15095,
+   "care": 2114,
+   "prev_total": 16718,
+   "prev_care": 1853,
+   "note": ""
+  },
+  "глоксиния": {
+   "total": 74532,
+   "care": 4601,
+   "prev_total": 94982,
+   "prev_care": 4628,
+   "note": ""
+  },
+  "колеус": {
+   "total": 188055,
+   "care": 7591,
+   "prev_total": 195109,
+   "prev_care": 6578,
+   "note": "заметная доля запросов про открытый грунт"
+  },
+  "плющ комнатный": {
+   "total": 5649,
+   "care": 685,
+   "prev_total": 6436,
+   "prev_care": 731,
+   "note": ""
+  },
+  "хедера": {
+   "total": 22181,
+   "care": 1258,
+   "prev_total": 23678,
+   "prev_care": 1482,
+   "note": "плющ"
+  },
+  "аспарагус": {
+   "total": 44058,
+   "care": 2765,
+   "prev_total": 48527,
+   "prev_care": 2731,
+   "note": ""
+  },
+  "циссус": {
+   "total": 10245,
+   "care": 1006,
+   "prev_total": 10905,
+   "prev_care": 994,
+   "note": ""
+  },
+  "рапис": {
+   "total": 1580,
+   "care": 57,
+   "prev_total": 1541,
+   "prev_care": 83,
+   "note": ""
+  },
+  "ховея": {
+   "total": 8351,
+   "care": 711,
+   "prev_total": 10312,
+   "prev_care": 766,
+   "note": ""
+  },
+  "кофейное дерево": {
+   "total": 15881,
+   "care": 832,
+   "prev_total": 18123,
+   "prev_care": 827,
+   "note": ""
+  },
+  "гардения": {
+   "total": 49955,
+   "care": 2452,
+   "prev_total": 57920,
+   "prev_care": 2199,
+   "note": ""
+  },
+  "стрелиция": {
+   "total": 74400,
+   "care": 4481,
+   "prev_total": 85205,
+   "prev_care": 4206,
+   "note": ""
+  },
+  "эхеверия": {
+   "total": 45640,
+   "care": 2092,
+   "prev_total": 54711,
+   "prev_care": 2462,
+   "note": ""
+  },
+  "хавортия": {
+   "total": 34933,
+   "care": 2151,
+   "prev_total": 40091,
+   "prev_care": 2170,
+   "note": ""
+  },
+  "маммиллярия": {
+   "total": 5073,
+   "care": 250,
+   "prev_total": 5510,
+   "prev_care": 298,
+   "note": ""
+  },
+  "пахира": {
+   "total": 31396,
+   "care": 5759,
+   "prev_total": 32040,
+   "prev_care": 4781,
+   "note": ""
+  },
+  "бокарнея": {
+   "total": 2924,
+   "care": 347,
+   "prev_total": 3482,
+   "prev_care": 372,
+   "note": ""
+  },
+  "фикус лировидный": {
+   "total": 2423,
+   "care": 183,
+   "prev_total": 3746,
+   "prev_care": 316,
+   "note": ""
+  },
+  "калла": {
+   "total": 410613,
+   "care": 7907,
+   "prev_total": 448651,
+   "prev_care": 6433,
+   "note": "около половины запросов про сад и открытый грунт"
+  },
+  "эухарис": {
+   "total": 25173,
+   "care": 1997,
+   "prev_total": 29543,
+   "prev_care": 2074,
+   "note": ""
+  },
+  "клеродендрум": {
+   "total": 33627,
+   "care": 3411,
+   "prev_total": 40659,
+   "prev_care": 3632,
+   "note": ""
+  },
+  "орхидея": {
+   "total": 1303352,
+   "care": 20174,
+   "prev_total": 1055481,
+   "prev_care": 18843,
+   "note": "все орхидеи; в каталоге фаленопсис"
+  }
+ }
+}
