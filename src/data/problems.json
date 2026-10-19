@@ -210,7 +210,9 @@
    "hamedoreya",
    "fikus-bendzhamina",
    "kalateya",
-   "alokaziya"
+   "alokaziya",
+   "tolstyanka",
+   "ciklamen"
   ],
   "rel": [
    "trips",
@@ -283,7 +285,8 @@
    "fikus-bendzhamina",
    "nefrolepis",
    "zamiokulkas",
-   "dracena"
+   "dracena",
+   "tolstyanka"
   ],
   "rel": [
    "muchnistyj-chervec",
@@ -361,7 +364,9 @@
    "adenium",
    "kalanhoe",
    "hamedoreya",
-   "fialka"
+   "fialka",
+   "tolstyanka",
+   "ciklamen"
   ],
   "rel": [
    "shchitovka",
@@ -436,7 +441,8 @@
   ],
   "plants": [
    "kalanhoe",
-   "begoniya"
+   "begoniya",
+   "ciklamen"
   ],
   "rel": [
    "muchnistyj-chervec",
@@ -509,7 +515,8 @@
    "Долить воду в уже мокрый грунт — самый частый способ добить поникшее растение."
   ],
   "plants": [
-   "spatifillum"
+   "spatifillum",
+   "ciklamen"
   ],
   "rel": [
    "gnil-kornej",
@@ -587,7 +594,9 @@
    "sansevieriya",
    "begoniya",
    "alokaziya",
-   "orhideya-falenopsis"
+   "orhideya-falenopsis",
+   "tolstyanka",
+   "ciklamen"
   ],
   "rel": [
    "vyanut-listya",
@@ -662,7 +671,8 @@
   ],
   "plants": [
    "tradeskanciya",
-   "kalanhoe"
+   "kalanhoe",
+   "tolstyanka"
   ],
   "rel": [
    "ne-cvetet",
@@ -735,7 +745,9 @@
    "Трипсы переносят вирусы растений.",
    "Лист, потерявший зеленый цвет из-за трипсов, зеленым уже не станет."
   ],
-  "plants": [],
+  "plants": [
+   "ciklamen"
+  ],
   "rel": [
    "pautinnyj-kleshch",
    "pyatna-na-listyah",
@@ -807,7 +819,9 @@
    "gibiskus",
    "pelargoniya",
    "kalanhoe",
-   "adenium"
+   "adenium",
+   "tolstyanka",
+   "ciklamen"
   ],
   "rel": [
    "belokrylka",
@@ -1101,7 +1115,9 @@
    "fikus-bendzhamina",
    "gibiskus",
    "dracena",
-   "alokaziya"
+   "alokaziya",
+   "tolstyanka",
+   "ciklamen"
   ],
   "rel": [
    "zhelteyut-listya",
@@ -1188,7 +1204,8 @@
    "pelargoniya",
    "anturium",
    "aglaonema",
-   "peperomiya"
+   "peperomiya",
+   "tolstyanka"
   ],
   "rel": [
    "belyj-nalet-na-listyah",
@@ -1268,7 +1285,8 @@
    "По тому, куда загибается лист, можно отличить избыток света от холода: у маранты листья сворачиваются внутрь, у фиалок и глоксиний края загибаются наружу (RHS)."
   ],
   "plants": [
-   "kalateya"
+   "kalateya",
+   "ciklamen"
   ],
   "rel": [
    "tlya",
@@ -1344,7 +1362,8 @@
    "orhideya-falenopsis",
    "pelargoniya",
    "adenium",
-   "dekabrist"
+   "dekabrist",
+   "ciklamen"
   ],
   "rel": [
    "opadayut-butony",
@@ -1432,7 +1451,8 @@
   "plants": [
    "gibiskus",
    "orhideya-falenopsis",
-   "dekabrist"
+   "dekabrist",
+   "ciklamen"
   ],
   "rel": [
    "ne-cvetet",

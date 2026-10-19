@@ -317,6 +317,42 @@
   "s": "tradeskanciya"
  },
  {
+  "n": "Толстянка (денежное дерево)",
+  "l": "Crassula ovata (Crassula argentea)",
+  "v": "toxic",
+  "syn": [
+   "толстянка",
+   "денежное дерево",
+   "крассула",
+   "крассула овата",
+   "jade plant",
+   "jade tree",
+   "baby jade",
+   "crassula ovata",
+   "crassula argentea"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/jade-plant",
+  "why": "В базе ASPCA — ядовита для кошек.",
+  "more": "Карточка ASPCA Jade Plant (латынь Crassula argentea — старое название Crassula ovata) отмечает растение как токсичное для кошек, собак и лошадей. Токсичное вещество не установлено. Признаки отравления: рвота, вялость, нарушение координации; в статье ASPCA о суккулентах также названы понос и отказ от еды. Держи толстянку там, где кот ее не достанет, опавшие листья убирай. Если кот погрыз листья и появились симптомы — сразу к ветеринару.",
+  "s": "tolstyanka"
+ },
+ {
+  "n": "Цикламен",
+  "l": "Cyclamen persicum (в ASPCA — Cyclamen spp.)",
+  "v": "toxic",
+  "syn": [
+   "цикламен персидский",
+   "cyclamen",
+   "persian cyclamen",
+   "florist's cyclamen",
+   "sowbread"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/cyclamen",
+  "why": "В базе ASPCA — токсичен для кошек.",
+  "more": "Карточка ASPCA Cyclamen (Cyclamen spp., семейство Primulaceae, второе название Sowbread) отмечает его как ядовитый для кошек, собак и лошадей. Признаки: слюнотечение, рвота, диарея; после поедания большого количества клубней — нарушения сердечного ритма, судороги, возможна гибель. Убери повыше, клубни в покое и при пересадке не оставляй на виду. При любых симптомах — сразу к ветеринару.",
+  "s": "ciklamen"
+ },
+ {
   "n": "Гибискус",
   "l": "Hibiscus rosa-sinensis",
   "v": "care",
