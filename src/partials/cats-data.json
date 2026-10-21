@@ -113,6 +113,39 @@
   "s": "fialka"
  },
  {
+  "n": "Хойя",
+  "l": "Hoya carnosa",
+  "v": "safe",
+  "syn": [
+   "хойя мясистая",
+   "восковой плющ",
+   "hoya",
+   "hoya carnosa",
+   "wax plant",
+   "honey plant",
+   "porcelain flower",
+   "hindu rope"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/honey-plant",
+  "why": "В базе ASPCA — нетоксична для кошек (Hoya carnosa и сорт 'Krinkle Kurl').",
+  "more": "В базе ASPCA только хойя мясистая и ее сорт с закрученными листьями; про другие виды хойи данных нет.",
+  "s": "hoyya"
+ },
+ {
+  "n": "Пахира",
+  "l": "Pachira aquatica",
+  "v": "safe",
+  "syn": [
+   "money tree",
+   "pachira",
+   "гвианский каштан"
+  ],
+  "u": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/money-tree",
+  "why": "В базе ASPCA — нетоксична для кошек.",
+  "more": "Но ASPCA допускает тошноту и рвоту, если кот наестся листьев, а NC State отмечает ее как проблему для кошек. Грызть все равно не давай.",
+  "s": "pahira"
+ },
+ {
   "n": "Монстера",
   "l": "Monstera deliciosa",
   "v": "toxic",

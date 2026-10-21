@@ -134,7 +134,10 @@
    "Личинки едят в основном грибы и органику. Страдают от них прежде всего сеянцы, черенки и молодые растения; взрослым растениям они вредят редко.",
    "При комнатной температуре (18–24 °C) от яйца до взрослой мушки проходит 3–4 недели, размножение в доме идет круглый год (Colorado State)."
   ],
-  "plants": [],
+  "plants": [
+   "pahira",
+   "hoyya"
+  ],
   "rel": [
    "nogohvostki",
    "belyj-nalet-na-grunte",
@@ -212,7 +215,9 @@
    "kalateya",
    "alokaziya",
    "tolstyanka",
-   "ciklamen"
+   "ciklamen",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "trips",
@@ -286,7 +291,9 @@
    "nefrolepis",
    "zamiokulkas",
    "dracena",
-   "tolstyanka"
+   "tolstyanka",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "muchnistyj-chervec",
@@ -366,7 +373,9 @@
    "hamedoreya",
    "fialka",
    "tolstyanka",
-   "ciklamen"
+   "ciklamen",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "shchitovka",
@@ -442,7 +451,8 @@
   "plants": [
    "kalanhoe",
    "begoniya",
-   "ciklamen"
+   "ciklamen",
+   "pahira"
   ],
   "rel": [
    "muchnistyj-chervec",
@@ -516,7 +526,8 @@
   ],
   "plants": [
    "spatifillum",
-   "ciklamen"
+   "ciklamen",
+   "hoyya"
   ],
   "rel": [
    "gnil-kornej",
@@ -596,7 +607,9 @@
    "alokaziya",
    "orhideya-falenopsis",
    "tolstyanka",
-   "ciklamen"
+   "ciklamen",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "vyanut-listya",
@@ -672,7 +685,8 @@
   "plants": [
    "tradeskanciya",
    "kalanhoe",
-   "tolstyanka"
+   "tolstyanka",
+   "hoyya"
   ],
   "rel": [
    "ne-cvetet",
@@ -821,7 +835,9 @@
    "kalanhoe",
    "adenium",
    "tolstyanka",
-   "ciklamen"
+   "ciklamen",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "belokrylka",
@@ -1117,7 +1133,9 @@
    "dracena",
    "alokaziya",
    "tolstyanka",
-   "ciklamen"
+   "ciklamen",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "zhelteyut-listya",
@@ -1206,7 +1224,9 @@
    "anturium",
    "aglaonema",
    "peperomiya",
-   "tolstyanka"
+   "tolstyanka",
+   "pahira",
+   "hoyya"
   ],
   "rel": [
    "belyj-nalet-na-listyah",
@@ -1365,7 +1385,8 @@
    "pelargoniya",
    "adenium",
    "dekabrist",
-   "ciklamen"
+   "ciklamen",
+   "hoyya"
   ],
   "rel": [
    "opadayut-butony",
@@ -1454,7 +1475,8 @@
    "gibiskus",
    "orhideya-falenopsis",
    "dekabrist",
-   "ciklamen"
+   "ciklamen",
+   "hoyya"
   ],
   "rel": [
    "ne-cvetet",
