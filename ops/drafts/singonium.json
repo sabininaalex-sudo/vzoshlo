@@ -1,0 +1,189 @@
+{
+ "status": "черновик: нет кредитов Higgsfield на картинку (нужно 0,15). Факты проверены вторым субагентом 23.10.2026. Добавить в src/data/plants.json и src/partials/cats-data.json после генерации картинки.",
+ "wordstat_care_sep2026": 5132,
+ "profile": {
+  "slug": "singonium",
+  "n": "Сингониум",
+  "latin": "Syngonium podophyllum",
+  "aka": "стрелолистная лиана, нефтитис (так его называет Illinois Extension), arrowhead plant",
+  "title": "Сингониум: уход в домашних условиях, свет, полив и размножение",
+  "desc": "Лиана со стрелолистными листьями",
+  "level": "Для новичков",
+  "tags": [
+   "new",
+   "shade"
+  ],
+  "q_light": "Средний или яркий рассеянный, без прямого солнца",
+  "q_water": "Когда верх грунта слегка подсох",
+  "char": "Тропическая лиана из семейства ароидных, родом из лесов от Мексики до Южной Америки (Clemson HGIC, NC State). В продаже почти всегда молодые растения со стрелолистными или сердцевидными листьями, часто с серебристым, белым или розовым рисунком (NC State, Clemson HGIC, Illinois). Обычные сорта вырастают примерно до 1–2 м в высоту (NC State, Clemson HGIC; RHS дает до 2 м), карликовые — меньше 60 см (Clemson HGIC). NC State называет его неприхотливым, Clemson HGIC — очень адаптивным. Молодое растение компактное и подходит для горшка или подвесного кашпо, а взрослое захочет опору — палку с мхом, решетку или бамбук (Clemson HGIC, Illinois, UF/IFAS). Цветет в комнате редко (NC State, RHS).",
+  "light": "Лучше всего средний или яркий рассеянный свет (Clemson HGIC, Illinois); RHS пишет про полутень. Clemson HGIC советует восточное окно или место в паре метров от западного; у северного окна сингониум живет, но окраска тускнеет, а низкий свет он в целом переносит. Прямого солнца избегай: листья обгорают или выцветают (NC State). Пестрым сортам нужно больше света, чем зеленым (Clemson HGIC, RHS) — в тени они зеленеют, и рисунок возвращается на новых листьях, если переставить ярче (Clemson HGIC). Совсем мало света — побеги вытягиваются и слабеют (UF/IFAS).",
+  "water": "Давай верхнему слою грунта слегка подсохнуть, потом поливай (Clemson HGIC, UF/IFAS); Illinois пишет «держи грунт чуть влажным». В период роста RHS советует поливать щедро, зимой — скупее. Зимой поливай реже, но совсем пересыхать не давай (UF/IFAS). Вода — той же температуры, что воздух в комнате: холодная зимой оставляет водянистые пятна на листьях (UF/IFAS). Если желтеют старые листья — возможно, грунт пересыхает или растению не хватает азота (UF/IFAS).",
+  "hum": "Источники расходятся. Clemson HGIC: лучше от 50%, но и более сухой воздух сингониум терпит. UF/IFAS: листья выглядят лучше при 40–60%, а при нормальной влажности вредители редки. NC State описывает его как любителя тепла и высокой влажности, а Illinois, наоборот, пишет про низкую влажность. Протирать листья от пыли влажной безворсовой тряпкой полезно и против вредителей (UF/IFAS).",
+  "temp": "Комфортно 18–24 °C (Clemson HGIC); UF/IFAS дает 18–27 °C, чтобы сохранялась окраска листьев. Ниже 13 °C возможна травма от холода (UF/IFAS, в разделе про перевозку растений), а RHS ставит зимний минимум 15 °C. Так что сквозняки и холодный подоконник зимой — не его история.",
+  "soil": "Рыхлый грунт: Clemson HGIC советует поровну торфа или кокосового субстрата, вермикулита и перлита; Illinois и RHS — обычный грунт для комнатных растений. Подкармливать много не нужно (Clemson HGIC): комплексным удобрением примерно раз в месяц весной и летом в уменьшенной дозе (Clemson HGIC) или жидким раз в 3–4 недели в период роста (RHS). Дозировка — по инструкции на упаковке. Сдержанная подкормка помогает дольше сохранять молодые стрелолистные листья, особенно при слабом свете (Clemson HGIC).",
+  "prop": "Легко размножается черенками (UF/IFAS, Illinois, NC State): верхушечными или отрезками стебля с одним узлом (UF/IFAS); укоренять можно прямо в воде (Missouri Extension). Еще варианты — воздушные отводки (UF/IFAS, Missouri Extension), деление куста (NC State). RHS советует черенковать летом, с нижним подогревом. Чтобы куст оставался пышным, а не плетью, срезай побеги, как только они начинают отрастать (NC State); если вытянулся — укороти весной (RHS).",
+  "probs": [
+   [
+    "Пестрые листья стали зелеными",
+    "мало света; переставь ярче, и рисунок вернется на новых листьях (Clemson HGIC)"
+   ],
+   [
+    "Длинные слабые побеги",
+    "мало света (UF/IFAS)"
+   ],
+   [
+    "Обгоревшие или выцветшие листья",
+    "прямое солнце (NC State)"
+   ],
+   [
+    "Желтеют старые листья",
+    "пересыхание грунта или нехватка азота (UF/IFAS)"
+   ],
+   [
+    "Водянистые пятна на листьях",
+    "полив холодной водой зимой (UF/IFAS); бывает и бактериальная пятнистость (NC State, Clemson HGIC)"
+   ],
+   [
+    "Подгнивает стебель",
+    "стеблевая гниль (Clemson HGIC) или мягкая гниль (NC State)"
+   ],
+   [
+    "Повреждения от холода",
+    "температура ниже 13 °C (UF/IFAS)"
+   ],
+   [
+    "Вредители",
+    "мучнистый червец и паутинный клещ (NC State, Clemson HGIC, RHS), тля (NC State, Clemson HGIC), трипсы (NC State, UF/IFAS), белокрылка (UF/IFAS)"
+   ]
+  ],
+  "facts": [
+   "Сингониум меняет листья с возрастом: у молодого они цельные, стрелолистные, потом появляются листья из 3 листочков (Clemson HGIC), а у взрослой лазающей лианы они рассечены на 5–11 листочков (NC State, Clemson HGIC; UF/IFAS пишет о 3–11). В магазинах продают именно молодую форму.",
+   "Во Флориде сингониум сбежал из горшков и стал инвазивным: Florida Invasive Species Council относит его к категории I, он может глушить всходы местных растений, и UF/IFAS не советует сажать его во Флориде.",
+   "Сок раздражает кожу, рот и глаза — при обрезке надень перчатки (RHS, UF/IFAS). По данным Clemson HGIC, в роде больше 40 видов, но большинство из них редко встречается в продаже."
+  ],
+  "cat": "toxic",
+  "cat_note": "По базе ASPCA (карточки Arrow-Head Vine, Nephthytis и Green Gold Naphthysis, все — Syngonium podophyllum) сингониум ядовит для кошек, собак и лошадей. В нем есть нерастворимые оксалаты кальция: если кот погрызет лист, будут раздражение и боль во рту, отек губ и языка, сильное слюнотечение, рвота, трудно глотать. Поставь горшок туда, куда кот не доберется, и убирай опавшие листья. Если кот погрыз растение и у него такие симптомы — сразу к ветеринару.",
+  "cat_url": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/arrow-head-vine",
+  "src": [
+   [
+    "NC State Extension: Syngonium podophyllum",
+    "https://plants.ces.ncsu.edu/plants/syngonium-podophyllum/common-name/arrowhead-plant/"
+   ],
+   [
+    "Clemson HGIC: Arrowhead Vine",
+    "https://hgic.clemson.edu/factsheet/arrowhead-vine-syngonium-spp-indoor-care-growing-tips-plant-guide/"
+   ],
+   [
+    "UF/IFAS: Cultural Guidelines for Interiorscape Syngonium (EP244)",
+    "https://ask.ifas.ufl.edu/publication/EP244"
+   ],
+   [
+    "UF/IFAS Plant Directory: Syngonium podophyllum",
+    "https://plant-directory.ifas.ufl.edu/plant-directory/syngonium-podophyllum"
+   ],
+   [
+    "Illinois Extension: Nephthytis",
+    "https://extension.illinois.edu/houseplants/nephthytis"
+   ],
+   [
+    "University of Missouri Extension: Home Propagation of Houseplants",
+    "https://extension.missouri.edu/publications/g6560"
+   ],
+   [
+    "RHS",
+    "https://www.rhs.org.uk/plants/17899/syngonium-podophyllum/details"
+   ],
+   [
+    "ASPCA: Arrow-Head Vine",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/arrow-head-vine"
+   ],
+   [
+    "ASPCA: Nephthytis",
+    "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/nephthytis"
+   ],
+   [
+    "ASPCA: Green Gold Naphthysis",
+    "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/green-gold-naphthysis"
+   ]
+  ],
+  "quiz": {
+   "light": [
+    "bright",
+    "mid",
+    "low"
+   ],
+   "dry": false,
+   "easy": true,
+   "fussy": false,
+   "bloom": false,
+   "vibes": [
+    "jungle",
+    "odd"
+   ],
+   "why": "Неприхотливая лиана, мирится со средним и даже слабым светом, но ядовита для кошек",
+   "v": {
+    "jungle": "Лиана, которая свисает из кашпо или ползет по опоре",
+    "odd": "С возрастом стрелолистные листья превращаются в «ладошки» из 5–11 долей"
+   }
+  }
+ },
+ "cats": {
+  "n": "Сингониум",
+  "l": "Syngonium podophyllum",
+  "v": "toxic",
+  "syn": [
+   "сингониум",
+   "Syngonium",
+   "сингониум ногоплодный",
+   "arrowhead plant",
+   "arrowhead vine",
+   "arrow-head vine",
+   "nephthytis",
+   "Green Gold Naphthysis",
+   "trileaf wonder"
+  ],
+  "u": "https://www.aspca.org/pet-care/animal-poison-control/toxic-and-non-toxic-plants/arrow-head-vine",
+  "why": "По ASPCA ядовит для кошек, собак и лошадей: нерастворимые оксалаты кальция раздражают рот, вызывают слюнотечение, рвоту и трудности с глотанием.",
+  "more": "Держи горшок вне досягаемости кота и убирай опавшие листья; при симптомах после поедания — к ветеринару. Сок раздражает и кожу человека, обрезай в перчатках (RHS).",
+  "s": "singonium"
+ },
+ "problems": [
+  {
+   "slug": "pautinnyj-kleshch",
+   "src": "NC State (twospotted spider mites), Clemson HGIC (spider mites), RHS (glasshouse red spider mite)"
+  },
+  {
+   "slug": "muchnistyj-chervec",
+   "src": "NC State, Clemson HGIC, RHS (mealybugs)"
+  },
+  {
+   "slug": "tlya",
+   "src": "NC State, Clemson HGIC (aphids)"
+  },
+  {
+   "slug": "trips",
+   "src": "NC State (banded greenhouse thrips), UF/IFAS EP244 (thrips)"
+  },
+  {
+   "slug": "belokrylka",
+   "src": "UF/IFAS EP244 (whitefly; в основном при выращивании в грунте в теплицах)"
+  },
+  {
+   "slug": "vytyagivaetsya",
+   "src": "UF/IFAS EP244 (stretched, elongated internodes — low light)"
+  },
+  {
+   "slug": "pyatna-na-listyah",
+   "src": "NC State и Clemson HGIC (bacterial leaf spot), UF/IFAS EP244 (cold water spots)"
+  },
+  {
+   "slug": "podmerzlo",
+   "src": "UF/IFAS EP244 (chilling injury below 55°F)"
+  },
+  {
+   "slug": "ne-cvetet",
+   "src": "NC State (blooms rare indoors), RHS (seldom produced in cultivation)"
+  }
+ ],
+ "image_prompt": "Realistic studio photo of a Syngonium podophyllum (arrowhead plant) houseplant with bushy arrowhead-shaped green leaves with creamy white-silver centers and veins, in a simple terracotta pot, whole plant and pot in frame, centered, isolated on pure white seamless background, soft light"
+}
