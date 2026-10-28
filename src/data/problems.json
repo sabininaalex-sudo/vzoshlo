@@ -1141,7 +1141,8 @@
    "zhelteyut-listya",
    "pautinnyj-kleshch",
    "vyanut-listya",
-   "podmerzlo"
+   "podmerzlo",
+   "novoe-rastenie"
   ],
   "src": [
    [
@@ -1482,7 +1483,8 @@
    "ne-cvetet",
    "opadayut-listya",
    "tlya",
-   "podmerzlo"
+   "podmerzlo",
+   "novoe-rastenie"
   ],
   "src": [
    [
@@ -1571,7 +1573,8 @@
   "rel": [
    "opadayut-listya",
    "pyatna-na-listyah",
-   "opadayut-butony"
+   "opadayut-butony",
+   "novoe-rastenie"
   ],
   "src": [
    [

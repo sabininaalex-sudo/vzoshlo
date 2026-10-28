@@ -440,6 +440,7 @@ PROBLEMS = json.load(open(os.path.join(SRC, 'data', 'problems.json'), encoding='
 PLANT_BY = {p['slug']: p for p in PLANTS}
 PROB_NAME = {p['slug']: p['card'] for p in PROBLEMS}
 PROB_NAME['zhelteyut-listya'] = 'Желтеют листья'
+PROB_NAME['novoe-rastenie'] = 'Новое растение дома'
 BOT_URL = CFG.get('telegram_bot') or 'https://t.me/VsoshloBot'
 BOT_CARD = (f'<div class="card bot-card"><div class="eyebrow">Напоминалка в Telegram</div>'
             f'<p style="margin-top:8px">Бот напомнит проверить грунт — поливать по потребности, а не по графику.</p>'
@@ -480,7 +481,9 @@ def pod_html():
 
 def problems_grid():
     cards = ['<a class="card" href="@/chto-s-rasteniem/zhelteyut-listya/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Желтеют листья</h2>'
-             '<span class="desc">Перелив, мало света или старые нижние листья</span></a>']
+             '<span class="desc">Перелив, мало света или старые нижние листья</span></a>',
+             '<a class="card" href="@/chto-s-rasteniem/novoe-rastenie/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Новое растение дома</h2>'
+             '<span class="desc">Купили или подарили: первые недели, праздничные растения</span></a>']
     for p in PROBLEMS:
         cards.append(f'<a class="card" href="@/chto-s-rasteniem/{p["slug"]}/"><span class="dot {p["dot"]}"></span>'
                      f'<h2 style="font-size:21px;font-weight:800">{esc(p["card"])}</h2><span class="desc">{esc(p["cdesc"])}</span></a>')
