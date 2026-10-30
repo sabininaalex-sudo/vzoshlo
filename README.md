@@ -11,6 +11,7 @@ snippets/       — сюда вставляется код Метрики и Р�
 src/pages/      — страницы (одна страница = один файл)
 src/data/plants.json — профили растений: из них собираются страницы /rasteniya/…/, каталог и квиз
 src/data/problems.json — разборы симптомов /chto-s-rasteniem/…/
+  (необязательное поле "tools" — ссылки на инструменты в «Плане действий»: fitolampa, svet-u-okna, poliv, gorshok, grunt)
 src/assets/     — стили, скрипт, картинки, шрифты (лежат на сайте, Google Fonts не используется)
 src/static/     — favicon и иконки; все файлы отсюда попадают в корень сайта (сюда же кладется ads.txt от РСЯ)
 docs/           — ГОТОВЫЙ сайт. Его публикует GitHub Pages. Руками не править

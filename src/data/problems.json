@@ -529,6 +529,9 @@
    "ciklamen",
    "hoyya"
   ],
+  "tools": [
+   "poliv"
+  ],
   "rel": [
    "gnil-kornej",
    "sohnut-konchiki-listev",
@@ -611,6 +614,10 @@
    "pahira",
    "hoyya"
   ],
+  "tools": [
+   "gorshok",
+   "grunt"
+  ],
   "rel": [
    "vyanut-listya",
    "moshki-v-gorshke",
@@ -687,6 +694,10 @@
    "kalanhoe",
    "tolstyanka",
    "hoyya"
+  ],
+  "tools": [
+   "fitolampa",
+   "svet-u-okna"
   ],
   "rel": [
    "ne-cvetet",
@@ -981,6 +992,9 @@
    "Прыгают они с помощью особой вилки на брюшке."
   ],
   "plants": [],
+  "tools": [
+   "poliv"
+  ],
   "rel": [
    "moshki-v-gorshke",
    "belyj-nalet-na-grunte",

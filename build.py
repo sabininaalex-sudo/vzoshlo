@@ -441,6 +441,13 @@ PLANT_BY = {p['slug']: p for p in PLANTS}
 PROB_NAME = {p['slug']: p['card'] for p in PROBLEMS}
 PROB_NAME['zhelteyut-listya'] = 'Желтеют листья'
 PROB_NAME['novoe-rastenie'] = 'Новое растение дома'
+TOOL_LINK = {
+    'fitolampa': 'Сколько часов и на каком расстоянии светить фитолампой',
+    'svet-u-okna': 'Сколько света у твоего окна',
+    'poliv': 'Как понять, что пора поливать',
+    'gorshok': 'Какой горшок нужен при пересадке',
+    'grunt': 'Состав грунта: калькулятор смеси',
+}
 BOT_URL = CFG.get('telegram_bot') or 'https://t.me/VsoshloBot'
 BOT_CARD = (f'<div class="card bot-card"><div class="eyebrow">Напоминалка в Telegram</div>'
             f'<p style="margin-top:8px">Бот напомнит проверить грунт — поливать по потребности, а не по графику.</p>'
@@ -511,6 +518,8 @@ def problem_page(p):
     facts = ''.join(f'<li>{esc(s)}</li>' for s in p['facts'])
     srcs = ''.join(f'<li><a href="{esc(u)}" target="_blank" rel="noopener">{esc(t)}</a></li>' for t, u in p['src'])
     rel = ''.join(f'<a class="card" href="@/chto-s-rasteniem/{s}/"><strong>{esc(PROB_NAME[s])}</strong></a>' for s in p['rel'])
+    tools = '<br>'.join(f'<a href="@/instrumenty/{s}/" style="color:var(--accent)">{esc(TOOL_LINK[s])}&nbsp;→</a>' for s in p.get('tools', []))
+    tools = f'<p style="margin-top:12px">{tools}</p>' if tools else ''
     plants = ''.join(
         f'<a class="rel" href="@/rasteniya/{s}/"><img src="@/assets/img/plants/{s}.webp" alt="" width="48" height="48" loading="lazy">'
         f'<span><strong>{esc(PLANT_BY[s]["n"])}</strong><span class="desc">{esc(PLANT_BY[s]["desc"])}</span></span></a>'
@@ -534,7 +543,7 @@ def problem_page(p):
 {{{{ad:feed}}}}
 </div>
 <aside class="sticky">
-<div class="card"><div class="eyebrow">План действий</div><ul class="plan">{plan}</ul></div>
+<div class="card"><div class="eyebrow">План действий</div><ul class="plan">{plan}</ul>{tools}</div>
 {'<div class="card"><div class="eyebrow">Бывает у растений из каталога</div><div class="rel-list">' + plants + '</div></div>' if plants else ''}
 {BOT_CARD}
 </aside>
