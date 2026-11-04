@@ -62,7 +62,8 @@
   "rel": [
    "belyj-nalet-na-grunte",
    "vyanut-listya",
-   "pyatna-na-listyah"
+   "pyatna-na-listyah",
+   "zimoj"
   ],
   "src": [
    [
@@ -222,7 +223,8 @@
   "rel": [
    "trips",
    "opadayut-listya",
-   "pyatna-na-listyah"
+   "pyatna-na-listyah",
+   "zimoj"
   ],
   "src": [
    [
@@ -702,7 +704,8 @@
   "rel": [
    "ne-cvetet",
    "zhelteyut-listya",
-   "opadayut-listya"
+   "opadayut-listya",
+   "zimoj"
   ],
   "src": [
    [

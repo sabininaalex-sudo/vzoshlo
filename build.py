@@ -441,6 +441,7 @@ PLANT_BY = {p['slug']: p for p in PLANTS}
 PROB_NAME = {p['slug']: p['card'] for p in PROBLEMS}
 PROB_NAME['zhelteyut-listya'] = 'Желтеют листья'
 PROB_NAME['novoe-rastenie'] = 'Новое растение дома'
+PROB_NAME['zimoj'] = 'Растения зимой'
 TOOL_LINK = {
     'fitolampa': 'Сколько часов и на каком расстоянии светить фитолампой',
     'svet-u-okna': 'Сколько света у твоего окна',
@@ -490,7 +491,9 @@ def problems_grid():
     cards = ['<a class="card" href="@/chto-s-rasteniem/zhelteyut-listya/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Желтеют листья</h2>'
              '<span class="desc">Перелив, мало света или старые нижние листья</span></a>',
              '<a class="card" href="@/chto-s-rasteniem/novoe-rastenie/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Новое растение дома</h2>'
-             '<span class="desc">Купили или подарили: первые недели, праздничные растения</span></a>']
+             '<span class="desc">Купили или подарили: первые недели, праздничные растения</span></a>',
+             '<a class="card" href="@/chto-s-rasteniem/zimoj/"><span class="dot y"></span><h2 style="font-size:21px;font-weight:800">Растения зимой</h2>'
+             '<span class="desc">Отопление, мало света: полив, влажность, подкормка</span></a>']
     for p in PROBLEMS:
         cards.append(f'<a class="card" href="@/chto-s-rasteniem/{p["slug"]}/"><span class="dot {p["dot"]}"></span>'
                      f'<h2 style="font-size:21px;font-weight:800">{esc(p["card"])}</h2><span class="desc">{esc(p["cdesc"])}</span></a>')
