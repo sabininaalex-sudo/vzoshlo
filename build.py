@@ -422,7 +422,7 @@ def plant_page(p):
 {sec("Размножение", p["prop"])}
 <section class="card"><h2>Частые беды</h2><ul class="plist">{probs}</ul>{'<p style="margin-top:12px"><b>Подробные разборы:</b></p><ul class="plist">' + prob_links + '</ul>' if prob_links else ''}</section>
 <section class="card"><h2>Интересно</h2><ul class="plist">{facts}</ul></section>
-<section class="card"><h2>{esc(p["n"])} и кошки</h2><p style="margin-top:8px"><span class="tag {cw[1]}">{cw[2]}</span></p><p style="margin-top:8px">{esc(p["cat_note"])}</p><p style="margin-top:8px"><a href="@/bezopasno-dlya-koshek/" style="color:var(--accent)">Проверить другие растения →</a></p></section>
+<section class="card"><h2>{esc(p["n"])} и кошки</h2><p style="margin-top:8px"><span class="tag {cw[1]}">{cw[2]}</span></p><p style="margin-top:8px">{esc(p["cat_note"])}</p><p style="margin-top:8px">Если кот погрыз ядовитое растение, звони ветеринару сразу, не жди симптомов, и возьми с собой название или фото растения.</p><p style="margin-top:8px"><a href="@/bezopasno-dlya-koshek/" style="color:var(--accent)">Проверить другие растения →</a></p></section>
 <section class="card"><h2>Источники</h2><p class="desc" style="margin-top:6px">Факты взяты из справочников университетских служб, RHS и базы ASPCA. Где источники расходятся, мы так и пишем.</p><ul class="plist">{srcs}</ul></section>
 {{{{ad:feed}}}}
 </div>
@@ -477,7 +477,7 @@ def pod_html():
 <button class="x" type="button" data-pop-close aria-label="Закрыть">✕</button>
 <div class="k">{esc(d["hello"])}</div>
 <p>{esc(d["text"])}</p>
-<div class="row"><span class="tag {cw[1]}">{cw[0]}</span><a class="btn" href="@/rasteniya/{p["slug"]}/">Хочу такой →</a></div>
+<div class="row"><span class="tag {cw[1]}">{cw[0]} (ASPCA)</span><a class="btn" href="@/rasteniya/{p["slug"]}/">Хочу такой →</a></div>
 </div>
 <button class="pod" type="button" data-pod aria-expanded="false" aria-label="Растение дня: {esc(low)}, открыть подсказку">
 <img src="@/assets/img/plants/{p["slug"]}.webp" alt="" width="84" height="84">
