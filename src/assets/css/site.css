@@ -132,6 +132,7 @@ input[type="text"], input[type="number"], select { font: 17px/1.2 Onest, sans-se
 .site-footer .wrap { padding-top: 22px; padding-bottom: 32px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; font-size: 15px; color: var(--muted); }
 .site-footer .logo { font-size: 22px; } .site-footer .logo svg { width: 13px; height: 22px; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.site-footer .disclaimer { flex-basis: 100%; margin: 0; font-size: 14px; line-height: 1.5; max-width: 72ch; }
 
 /* Главная: герой */
 .hero { position: relative; overflow-x: clip; overflow-y: visible; z-index: 2; }

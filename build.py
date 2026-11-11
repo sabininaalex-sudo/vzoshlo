@@ -273,6 +273,7 @@ def layout(meta, body, root, extra_css):
     footer = f'''<footer class="site-footer"><div class="wrap">
 <a class="logo" href="{root}" aria-label="{esc(CFG["site_name"])} — на главную">Взошло{LOGO_SVG}</a>
 <nav aria-label="Нижнее меню">{"".join(footer_links)}</nav>
+<p class="disclaimer">Советы по уходу носят общий характер. Если растение болеет или ты сомневаешься, ядовито ли оно для животных, посоветуйся со специалистом. Если питомец погрыз растение — сразу звони ветеринару.</p>
 </div></footer>'''
     crumbs = breadcrumbs_html(meta.get('crumbs'), root)
     main = body.replace('{{crumbs}}', crumbs)
