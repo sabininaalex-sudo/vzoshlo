@@ -1,6 +1,7 @@
 {
  "status": "черновик: нет кредитов Higgsfield на картинку (нужно 0,15). Факты проверены вторым субагентом 23.10.2026. Добавить в src/data/plants.json и src/partials/cats-data.json после генерации картинки.",
  "wordstat_care_sep2026": 4775,
+ "wordstat_care_oct2026": 5186,
  "profile": {
   "slug": "kroton",
   "n": "Кротон (кодиеум)",
